@@ -9,6 +9,6 @@
 import Foundation
 
 struct user {
-    
+    public var email : String!
     
 }
