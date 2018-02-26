@@ -1,0 +1,21 @@
+{
+  "Mac" : [
+    {
+      "name" : "MSAL",
+      "hash" : "5a6b1d42664d07b7fc7ef200a0b4674f2af88ac39aca8e10fca91da513924f46"
+    }
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "9b614c32c9afcf5c615632b3f7e7ee924fbfddfa",
+  "iOS" : [
+    {
+      "name" : "MSAL",
+      "hash" : "c0f14a00727c6f4ae83f247b63fd9845285faf1b3c2d5921452842a2fbda9fa5"
+    }
+  ]
+}
