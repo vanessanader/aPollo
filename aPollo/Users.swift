@@ -8,7 +8,20 @@
 
 import Foundation
 
-struct user {
-    public var email : String!
+struct student {
+    var name: String
+    var email : String
+    var isStudent : BooleanLiteralType
+    
+    
+    
+    
+    
+    func toAnyObject() -> NSDictionary {
+        return ["Name": name, "Email" : email, "isStudent" : isStudent]
+        
+        
+    }
+    
     
 }
