@@ -13,14 +13,12 @@ struct Student {
     
     var email : String
     
-    var isStudent : BooleanLiteralType
-    
     var classes : [Class]
     
     var questionsAsked : [String]
     
     func toAnyObject() -> NSDictionary {
-        return ["Name": name, "Email" : email, "isStudent" : isStudent, "Classes" : classes, "QuestionsAsked": questionsAsked]
+        return ["Name": name, "Email" : email, "Classes" : classes, "QuestionsAsked": questionsAsked]
     }
     
     

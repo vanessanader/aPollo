@@ -15,8 +15,6 @@ struct Class {
     
     var courseNumber : String
     
-    var coordinates : String
-    
     var location : String
     
     var sectionNumber : String
@@ -36,7 +34,7 @@ struct Class {
     var questionsAsked : [String]
     
     func toAnyObject() -> NSDictionary {
-        return ["Id": id, "CourseName" : courseName, "CourseNumber" : courseNumber, "Coordinates" : coordinates, "Location": location, "SectionNumber":sectionNumber, "ProfessorEmail" : professorEmail, "EvaluationNumber":evaluationNumber, "EvaluationIsStopped":evaluationIsStopped, "EvaluationId": evaluationId, "StudentsEnrolled": studentsEnrolled, "ClassPolls" : classPolls, "QuestionAsked":questionsAsked]
+        return ["Id": id, "CourseName" : courseName, "CourseNumber" : courseNumber, "Location": location, "SectionNumber":sectionNumber, "ProfessorEmail" : professorEmail, "EvaluationNumber":evaluationNumber, "EvaluationIsStopped":evaluationIsStopped, "EvaluationId": evaluationId, "StudentsEnrolled": studentsEnrolled, "ClassPolls" : classPolls, "QuestionAsked":questionsAsked]
     }
     
     

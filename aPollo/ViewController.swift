@@ -13,8 +13,6 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
     var accessToken = String()
     var applicationContext = MSALPublicClientApplication.init()
     
-    @IBOutlet weak var loggingText: UITextView!
-    @IBOutlet weak var signoutButton: UIButton!
     
     // This button will invoke the call to the Microsoft Graph API. It uses the
     // built in Swift libraries to create a connection.
@@ -37,14 +35,14 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
                     
                     if error == nil {
                         self.accessToken = (result?.accessToken)!
-                        self.loggingText.text = "Refreshing token silently)"
-                        self.loggingText.text = "Refreshed Access token is \(self.accessToken)"
+                        print("Refreshing token silently)")
+                        print("Refreshed Access token is \(self.accessToken)")
                         
-                        self.signoutButton.isEnabled = true;
+                    
                         self.getContentWithToken()
                         
                     } else {
-                        self.loggingText.text = "Could not acquire token silently: \(error ?? "No error information" as! Error)"
+                        print("Could not acquire token silently: \(error ?? "No error information" as! Error)")
                         
                     }
                 }
@@ -60,12 +58,12 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
                 self.applicationContext.acquireToken(forScopes: self.kScopes) { (result, error) in
                     if error == nil {
                         self.accessToken = (result?.accessToken)!
-                        self.loggingText.text = "Access token is \(self.accessToken)"
-                        self.signoutButton.isEnabled = true;
+                        print("Access token is \(self.accessToken)")
+               
                         self.getContentWithToken()
                         
                     } else  {
-                        self.loggingText.text = "Could not acquire token: \(error ?? "No error information" as! Error)"
+                        print("Could not acquire token: \(error ?? "No error information" as! Error)")
                     }
                 }
                 
@@ -75,7 +73,7 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
             
             // This is the catch all error.
             
-            self.loggingText.text = "Unable to acquire token. Got error: \(error)"
+            print("Unable to acquire token. Got error: \(error)")
             
         }
     }
@@ -87,7 +85,7 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
             // Initialize a MSALPublicClientApplication with a given clientID and authority
             self.applicationContext = try MSALPublicClientApplication.init(clientId: kClientID, authority: kAuthority)
         } catch {
-            self.loggingText.text = "Unable to create Application Context. Error: \(error)"
+            print("Unable to create Application Context. Error: \(error)")
         }
     }
     
@@ -100,10 +98,21 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
     override func viewWillAppear(_ animated: Bool) {
         
         if self.accessToken.isEmpty {
-            signoutButton.isEnabled = false;
+           
         }
     }
     func getContentWithToken() {
+        do {
+            
+            // Removes all tokens from the cache for this application for the provided user
+            // first parameter:   The user to remove from the cache
+            
+            try self.applicationContext.remove(self.applicationContext.users().first)
+            
+            
+        } catch let error {
+            print("Received error signing user out: \(error)")
+        }
         
         let sessionConfig = URLSessionConfiguration.default
         
@@ -118,8 +127,8 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
         urlSession.dataTask(with: request) { data, response, error in
             let result = try? JSONSerialization.jsonObject(with: data!, options: [])
             if result != nil {
-                self.loggingText.text = result.debugDescription
                 
+                print(result.debugDescription)
                 if (!result.debugDescription.contains("mail.aub.edu") && !result.debugDescription.contains("aub.edu.lb")){
                     let alert = UIAlertController(title: "Incomplete form", message: "Please sign in using a valid AUB email", preferredStyle: UIAlertControllerStyle.alert)
                     
@@ -134,23 +143,85 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
                         // first parameter:   The user to remove from the cache
                         
                         try self.applicationContext.remove(self.applicationContext.users().first)
-                        self.signoutButton.isEnabled = false;
+                        
                         
                     } catch let error {
-                        self.loggingText.text = "Received error signing user out: \(error)"
+                        print("Received error signing user out: \(error)")
                     }
                 }
                 
                 else {
+                    if (result.debugDescription.contains("aub.edu.lb")){
+                        let alert = UIAlertController(title: "Error", message: "You do not have access to this application. Login through our website if you are a professor.", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {action in
+                            do {
+                            
+                            // Removes all tokens from the cache for this application for the provided user
+                            // first parameter:   The user to remove from the cache
+                            
+                            try self.applicationContext.remove(self.applicationContext.users().first)
+                            
+                            
+                            } catch let error {
+                            print("Received error signing user out: \(error)")
+                            }
+                            }))
+                        self.present(alert, animated: true, completion: nil)
+
+                    }
+                    else{
                 let realResult = result as! NSDictionary
                 let name = realResult["displayName"] as! String
                     if name.contains("(Student)"){
-                        print ("Student")
-                    }
-                    else {
-                        print("Professor")
+
+                        var email = realResult["mail"] as! String
+                        var ref = email.components(separatedBy: "@")
+                        Database.database().reference().child("Users").observeSingleEvent(of: .value, with: { (snapshot) in
+                            
+                            var found = false
+                            if snapshot.hasChild("Students"){
+                                
+                                let snapshotV = snapshot.value as? NSDictionary
+                                let snapshotValue = snapshotV!["Students"] as! NSDictionary
+                                if snapshotValue[ref[0]] != nil {
+                                    found = true
+                                    let userInfo = snapshotValue[ref[0]] as! NSDictionary
+                                    
+                                    UserDefaults.standard.set(userInfo["Name"], forKey: "name")
+                                    UserDefaults.standard.set(userInfo["Email"] as! String, forKey: "email")
+                                    UserDefaults.standard.set(ref[0], forKey: "id")
+                                    UserDefaults.standard.set(true, forKey: "LoggedIn")
+                                    print("old user")
+                                }
+                            }
+                                if (!found) {
+                                    let firstName = realResult["givenName"] as! String
+                                    let lastName = realResult["surname"] as! String
+                                    
+                                    var fullName = firstName + " "+lastName
+                                    print("new user")
+                                    let newstudent = Student(name: fullName, email: email, classes: [], questionsAsked: [])
+                                    
+                                    print( "new user: \(newstudent)")
+                                    
+                                    let userref = Database.database().reference().child("Users").child("Students").child(ref[0])
+                                    
+                                    userref.setValue(newstudent.toAnyObject())
+                                    UserDefaults.standard.set(fullName, forKey: "name")
+                                    UserDefaults.standard.set(email, forKey: "email")
+                                    UserDefaults.standard.set(ref[0], forKey: "id")
+                                    UserDefaults.standard.set(true, forKey: "LoggedIn")
+                                    
+                                }
+                                
+                                
+                            })
+                            
+                    
+                        
                     }
                     
+                }
                 }
             }
                 
@@ -158,21 +229,6 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
             }.resume()
     }
    
-    @IBAction func dat(_ sender: Any) {
-        Database.database().reference().child("Vanessa").child("AnotherTest").setValue("Hi")
-    }
-    @IBAction func signoutButton(_ sender: UIButton) {
-        
-        do {
-            
-            // Removes all tokens from the cache for this application for the provided user
-            // first parameter:   The user to remove from the cache
-            
-            try self.applicationContext.remove(self.applicationContext.users().first)
-            self.signoutButton.isEnabled = false;
-            
-        } catch let error {
-            self.loggingText.text = "Received error signing user out: \(error)"
-        }
-    }
+
+
 }
