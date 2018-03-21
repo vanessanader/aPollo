@@ -14,11 +14,12 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
     var applicationContext = MSALPublicClientApplication.init()
     
     
+    
     // This button will invoke the call to the Microsoft Graph API. It uses the
     // built in Swift libraries to create a connection.
     
     @IBAction func callGraphButton(_ sender: UIButton) {
-        
+    
         
         do {
             
@@ -35,7 +36,7 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
                     
                     if error == nil {
                         self.accessToken = (result?.accessToken)!
-                        print("Refreshing token silently)")
+                        print("Refreshing token silently")
                         print("Refreshed Access token is \(self.accessToken)")
                         
                     
@@ -80,7 +81,8 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        Messaging.messaging().subscribe(toTopic: "-L-D_pp26VNrfCiRCvPa")
+        Messaging.messaging().subscribe(toTopic: "try")
         do {
             // Initialize a MSALPublicClientApplication with a given clientID and authority
             self.applicationContext = try MSALPublicClientApplication.init(clientId: kClientID, authority: kAuthority)

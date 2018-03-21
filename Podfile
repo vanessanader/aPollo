@@ -14,6 +14,7 @@ target 'aPollo' do
     pod 'Firebase/Auth'
     pod 'Firebase/Database'
     pod 'Firebase/Storage'
+ 
 
   target 'aPolloTests' do
     inherit! :search_paths

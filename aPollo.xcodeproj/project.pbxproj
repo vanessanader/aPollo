@@ -17,7 +17,9 @@
 		B60483771FC46EE700EF8931 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B60483751FC46EE700EF8931 /* LaunchScreen.storyboard */; };
 		B60483821FC46EE700EF8931 /* aPolloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60483811FC46EE700EF8931 /* aPolloTests.swift */; };
 		B604838D1FC46EE700EF8931 /* aPolloUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B604838C1FC46EE700EF8931 /* aPolloUITests.swift */; };
-		B604839D1FC472FA00EF8931 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B604839C1FC472FA00EF8931 /* GoogleService-Info.plist */; };
+		B614BC2C206181F6005D591B /* FIRMessagingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614BC2A206181F6005D591B /* FIRMessagingService.swift */; };
+		B614BC2D206181F6005D591B /* UNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614BC2B206181F6005D591B /* UNService.swift */; };
+		B614BC2F20618502005D591B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B614BC2E20618502005D591B /* GoogleService-Info.plist */; };
 		B61D2F74203B258A0036A152 /* StudentStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61D2F73203B258A0036A152 /* StudentStruct.swift */; };
 		B6569D7B204DA3CC002C6493 /* ClassStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6569D7A204DA3CC002C6493 /* ClassStruct.swift */; };
 		B6569D7D204DA506002C6493 /* ProfessorStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6569D7C204DA506002C6493 /* ProfessorStruct.swift */; };
@@ -71,7 +73,10 @@
 		B60483881FC46EE700EF8931 /* aPolloUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = aPolloUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B604838C1FC46EE700EF8931 /* aPolloUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aPolloUITests.swift; sourceTree = "<group>"; };
 		B604838E1FC46EE700EF8931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B604839C1FC472FA00EF8931 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B614BC2A206181F6005D591B /* FIRMessagingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRMessagingService.swift; sourceTree = "<group>"; };
+		B614BC2B206181F6005D591B /* UNService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNService.swift; sourceTree = "<group>"; };
+		B614BC2E20618502005D591B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B614BC3020618641005D591B /* aPollo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = aPollo.entitlements; sourceTree = "<group>"; };
 		B61D2F73203B258A0036A152 /* StudentStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentStruct.swift; sourceTree = "<group>"; };
 		B6569D7A204DA3CC002C6493 /* ClassStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassStruct.swift; sourceTree = "<group>"; };
 		B6569D7C204DA506002C6493 /* ProfessorStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorStruct.swift; sourceTree = "<group>"; };
@@ -154,9 +159,11 @@
 		B60483681FC46EE700EF8931 /* aPollo */ = {
 			isa = PBXGroup;
 			children = (
-				B604839C1FC472FA00EF8931 /* GoogleService-Info.plist */,
+				B614BC3020618641005D591B /* aPollo.entitlements */,
+				B614BC2E20618502005D591B /* GoogleService-Info.plist */,
 				B60483691FC46EE700EF8931 /* AppDelegate.swift */,
 				B6569D7A204DA3CC002C6493 /* ClassStruct.swift */,
+				B614BC29206181F6005D591B /* Service */,
 				B6569D80204DB93B002C6493 /* CourseEvaluationStruct.swift */,
 				B6569D82204DBC23002C6493 /* EvaluationQuestionStruct.swift */,
 				B61D2F73203B258A0036A152 /* StudentStruct.swift */,
@@ -192,6 +199,15 @@
 				B604838E1FC46EE700EF8931 /* Info.plist */,
 			);
 			path = aPolloUITests;
+			sourceTree = "<group>";
+		};
+		B614BC29206181F6005D591B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B614BC2A206181F6005D591B /* FIRMessagingService.swift */,
+				B614BC2B206181F6005D591B /* UNService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		F1F0D78545A85B3940EAA8B9 /* Frameworks */ = {
@@ -284,6 +300,14 @@
 					B60483651FC46EE700EF8931 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					B604837C1FC46EE700EF8931 = {
 						CreatedOnToolsVersion = 9.0;
@@ -323,8 +347,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B60483771FC46EE700EF8931 /* LaunchScreen.storyboard in Resources */,
-				B604839D1FC472FA00EF8931 /* GoogleService-Info.plist in Resources */,
 				B60483741FC46EE700EF8931 /* Assets.xcassets in Resources */,
+				B614BC2F20618502005D591B /* GoogleService-Info.plist in Resources */,
 				B604836F1FC46EE700EF8931 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,10 +530,12 @@
 				B604836C1FC46EE700EF8931 /* ViewController.swift in Sources */,
 				B6569D85204DBFB7002C6493 /* PollStruct.swift in Sources */,
 				B6569D81204DB93B002C6493 /* CourseEvaluationStruct.swift in Sources */,
+				B614BC2C206181F6005D591B /* FIRMessagingService.swift in Sources */,
 				B6569D89204DC9F4002C6493 /* PollAnswerStruct.swift in Sources */,
 				B60483721FC46EE700EF8931 /* aPollo.xcdatamodeld in Sources */,
 				B61D2F74203B258A0036A152 /* StudentStruct.swift in Sources */,
 				B6569D7F204DB6EE002C6493 /* StudentQuestionStruct.swift in Sources */,
+				B614BC2D206181F6005D591B /* UNService.swift in Sources */,
 				B6569D83204DBC23002C6493 /* EvaluationQuestionStruct.swift in Sources */,
 				B604836A1FC46EE700EF8931 /* AppDelegate.swift in Sources */,
 				B668B5AE1FD6ED4C000D11AF /* AttendanceViewController.swift in Sources */,
@@ -681,15 +707,16 @@
 			baseConfigurationReference = A8711FBF10D10882DF70090F /* Pods-aPollo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = aPollo/aPollo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LEU3K6P4DA;
+				DEVELOPMENT_TEAM = 8LT4277C74;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = aPollo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lvd.aPollo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vanessanader.aPollo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -701,15 +728,16 @@
 			baseConfigurationReference = A3A2901B9F5C5417F9D47D88 /* Pods-aPollo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = aPollo/aPollo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LEU3K6P4DA;
+				DEVELOPMENT_TEAM = 8LT4277C74;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = aPollo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lvd.aPollo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vanessanader.aPollo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

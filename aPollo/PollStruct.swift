@@ -13,7 +13,11 @@ struct Poll {
     
     var pollQuestions : [PollQuestion]
     
+    var classId : String
+    
+    var isAvailable : BooleanLiteralType
+    
     func toAnyObject() -> NSDictionary {
-        return ["PollTitle": pollTitle, "PollQuestions" : pollQuestions]
+        return ["PollTitle": pollTitle, "ClassId": classId, "PollQuestions" : pollQuestions, "isAvailable": isAvailable]
     }
 }

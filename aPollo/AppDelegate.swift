@@ -10,10 +10,11 @@ import UIKit
 import CoreData
 import MSAL
 import Firebase
+import UserNotifications
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
@@ -21,8 +22,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        UNService.shared.authorize()
         return true
     }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Messaging.messaging().apnsToken = deviceToken
+         Messaging.messaging().subscribe(toTopic: "try")
+         Messaging.messaging().subscribe(toTopic: "-L-D_pp26VNrfCiRCvPa")
+        print("dt: \(deviceToken)")
+        print("did register for notifications")
+        print("FCM TOKEN: \(Messaging.messaging().fcmToken)")
+        if let refreshedToken = InstanceID.instanceID().token() {
+            print("InstanceID token: \(refreshedToken)")
+        }
+        
+    }
+    
+    
+    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String)
+    {
+        print("Firebase registration token: \(fcmToken)")
+    }
+    
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

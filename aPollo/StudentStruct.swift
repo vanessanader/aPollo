@@ -13,7 +13,7 @@ struct Student {
     
     var email : String
     
-    var classes : [Class]
+    var classes : [String]
     
     var questionsAsked : [String]
     
