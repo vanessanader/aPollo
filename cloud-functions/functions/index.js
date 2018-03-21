@@ -17,6 +17,7 @@ function sendNotification(poll){
     notification: {
     title: "New Poll Available",
     body: "Open aPollo to see the new poll your professor has made available",
+    badge: badgeCount.toString(),
     sound: 'default'
         
     }
