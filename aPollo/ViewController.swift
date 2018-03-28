@@ -13,7 +13,8 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
     var accessToken = String()
     var applicationContext = MSALPublicClientApplication.init()
     
-    
+    @IBOutlet weak var logInButton: UIButton!
+    var success = false
     
     // This button will invoke the call to the Microsoft Graph API. It uses the
     // built in Swift libraries to create a connection.
@@ -80,6 +81,7 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
     }
     
     override func viewDidLoad() {
+       logInButton.isUserInteractionEnabled = true
         super.viewDidLoad()
         Messaging.messaging().subscribe(toTopic: "-L-D_pp26VNrfCiRCvPa")
         Messaging.messaging().subscribe(toTopic: "try")
@@ -102,6 +104,34 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
         if self.accessToken.isEmpty {
            
         }
+
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    override func viewDidAppear(_ animated: Bool) {
+         DispatchQueue.main.async {
+        if UserDefaults.standard.bool(forKey: "LoggedIn") == true{
+            
+            self.success = true
+            self.performSegue(withIdentifier: "toWelcome", sender: self)
+            
+        }
+        }
+    }
+    override func
+        shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
+        if let ident = identifier {
+            if ident == "toWelcome" {
+                if !success {
+                    
+                    return false
+                }
+                
+            }
+        }
+        return true
     }
     func getContentWithToken() {
         do {
@@ -115,7 +145,7 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
         } catch let error {
             print("Received error signing user out: \(error)")
         }
-        
+        logInButton.isUserInteractionEnabled = false
         let sessionConfig = URLSessionConfiguration.default
         
         // Specify the Graph API endpoint
@@ -175,7 +205,8 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
                 let realResult = result as! NSDictionary
                 let name = realResult["displayName"] as! String
                     if name.contains("(Student)"){
-
+                        self.success = true
+                        self.logInButton.isUserInteractionEnabled = false
                         var email = realResult["mail"] as! String
                         var ref = email.components(separatedBy: "@")
                         Database.database().reference().child("Users").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -194,6 +225,8 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
                                     UserDefaults.standard.set(ref[0], forKey: "id")
                                     UserDefaults.standard.set(true, forKey: "LoggedIn")
                                     print("old user")
+                                    self.performSegue(withIdentifier: "toWelcome", sender: self)
+
                                 }
                             }
                                 if (!found) {
@@ -213,6 +246,8 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
                                     UserDefaults.standard.set(email, forKey: "email")
                                     UserDefaults.standard.set(ref[0], forKey: "id")
                                     UserDefaults.standard.set(true, forKey: "LoggedIn")
+                                    self.performSegue(withIdentifier: "toWelcome", sender: self)
+
                                     
                                 }
                                 

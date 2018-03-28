@@ -31,6 +31,10 @@
 		B6569D89204DC9F4002C6493 /* PollAnswerStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6569D88204DC9F4002C6493 /* PollAnswerStruct.swift */; };
 		B668B5AE1FD6ED4C000D11AF /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B668B5AD1FD6ED4C000D11AF /* AttendanceViewController.swift */; };
 		B68E9C2A2031EF6600470B5A /* MSAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B694C2FA2028B5CD002A5E03 /* MSAL.framework */; };
+		B6CADB22206BF28F0027D4C0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CADB21206BF28F0027D4C0 /* WelcomeViewController.swift */; };
+		B6CADB24206BF2B30027D4C0 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CADB23206BF2B30027D4C0 /* MenuTableViewController.swift */; };
+		B6CADB28206BF9B30027D4C0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CADB27206BF9B20027D4C0 /* SWRevealViewController.m */; };
+		B6CADB2A206C1EC70027D4C0 /* ClassesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CADB29206C1EC70027D4C0 /* ClassesTableViewCell.swift */; };
 		EE66E01FCECCFFF62C3AA5B6 /* Pods_aPollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E13AEB1E8D787FF49DEDF9 /* Pods_aPollo.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +93,12 @@
 		B668B5AD1FD6ED4C000D11AF /* AttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewController.swift; sourceTree = "<group>"; };
 		B694C2FA2028B5CD002A5E03 /* MSAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MSAL.framework; path = Carthage/Build/iOS/MSAL.framework; sourceTree = "<group>"; };
 		B6950D266C66E1C901CE51CE /* Pods_aPolloUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aPolloUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6CADB21206BF28F0027D4C0 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		B6CADB23206BF2B30027D4C0 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuTableViewController.swift; path = /Users/vanessanader/aPollo/aPollo/MenuTableViewController.swift; sourceTree = "<absolute>"; };
+		B6CADB25206BF9B00027D4C0 /* aPollo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "aPollo-Bridging-Header.h"; sourceTree = "<group>"; };
+		B6CADB26206BF9B20027D4C0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		B6CADB27206BF9B20027D4C0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		B6CADB29206C1EC70027D4C0 /* ClassesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesTableViewCell.swift; sourceTree = "<group>"; };
 		F522A4FC5CB64ECF2C8F102A /* Pods-aPolloUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aPolloUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-aPolloUITests/Pods-aPolloUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,24 +171,30 @@
 			children = (
 				B614BC3020618641005D591B /* aPollo.entitlements */,
 				B614BC2E20618502005D591B /* GoogleService-Info.plist */,
+				B6CADB23206BF2B30027D4C0 /* MenuTableViewController.swift */,
 				B60483691FC46EE700EF8931 /* AppDelegate.swift */,
 				B6569D7A204DA3CC002C6493 /* ClassStruct.swift */,
 				B614BC29206181F6005D591B /* Service */,
 				B6569D80204DB93B002C6493 /* CourseEvaluationStruct.swift */,
-				B6569D82204DBC23002C6493 /* EvaluationQuestionStruct.swift */,
 				B61D2F73203B258A0036A152 /* StudentStruct.swift */,
 				B6569D7C204DA506002C6493 /* ProfessorStruct.swift */,
 				B6569D7E204DB6EE002C6493 /* StudentQuestionStruct.swift */,
 				B6569D84204DBFB7002C6493 /* PollStruct.swift */,
 				B6569D86204DC872002C6493 /* PollQuestionStruct.swift */,
+				B6CADB26206BF9B20027D4C0 /* SWRevealViewController.h */,
+				B6CADB27206BF9B20027D4C0 /* SWRevealViewController.m */,
 				B6569D88204DC9F4002C6493 /* PollAnswerStruct.swift */,
 				B604836D1FC46EE700EF8931 /* Main.storyboard */,
+				B6CADB29206C1EC70027D4C0 /* ClassesTableViewCell.swift */,
+				B6CADB21206BF28F0027D4C0 /* WelcomeViewController.swift */,
 				B604836B1FC46EE700EF8931 /* ViewController.swift */,
+				B6569D82204DBC23002C6493 /* EvaluationQuestionStruct.swift */,
 				B668B5AD1FD6ED4C000D11AF /* AttendanceViewController.swift */,
 				B60483731FC46EE700EF8931 /* Assets.xcassets */,
 				B60483751FC46EE700EF8931 /* LaunchScreen.storyboard */,
 				B60483781FC46EE700EF8931 /* Info.plist */,
 				B60483701FC46EE700EF8931 /* aPollo.xcdatamodeld */,
+				B6CADB25206BF9B00027D4C0 /* aPollo-Bridging-Header.h */,
 			);
 			path = aPollo;
 			sourceTree = "<group>";
@@ -299,6 +315,7 @@
 				TargetAttributes = {
 					B60483651FC46EE700EF8931 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -529,13 +546,17 @@
 				B6569D7B204DA3CC002C6493 /* ClassStruct.swift in Sources */,
 				B604836C1FC46EE700EF8931 /* ViewController.swift in Sources */,
 				B6569D85204DBFB7002C6493 /* PollStruct.swift in Sources */,
+				B6CADB2A206C1EC70027D4C0 /* ClassesTableViewCell.swift in Sources */,
 				B6569D81204DB93B002C6493 /* CourseEvaluationStruct.swift in Sources */,
+				B6CADB22206BF28F0027D4C0 /* WelcomeViewController.swift in Sources */,
+				B6CADB28206BF9B30027D4C0 /* SWRevealViewController.m in Sources */,
 				B614BC2C206181F6005D591B /* FIRMessagingService.swift in Sources */,
 				B6569D89204DC9F4002C6493 /* PollAnswerStruct.swift in Sources */,
 				B60483721FC46EE700EF8931 /* aPollo.xcdatamodeld in Sources */,
 				B61D2F74203B258A0036A152 /* StudentStruct.swift in Sources */,
 				B6569D7F204DB6EE002C6493 /* StudentQuestionStruct.swift in Sources */,
 				B614BC2D206181F6005D591B /* UNService.swift in Sources */,
+				B6CADB24206BF2B30027D4C0 /* MenuTableViewController.swift in Sources */,
 				B6569D83204DBC23002C6493 /* EvaluationQuestionStruct.swift in Sources */,
 				B604836A1FC46EE700EF8931 /* AppDelegate.swift in Sources */,
 				B668B5AE1FD6ED4C000D11AF /* AttendanceViewController.swift in Sources */,
@@ -707,6 +728,7 @@
 			baseConfigurationReference = A8711FBF10D10882DF70090F /* Pods-aPollo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = aPollo/aPollo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8LT4277C74;
@@ -718,6 +740,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vanessanader.aPollo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "aPollo/aPollo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -728,6 +752,7 @@
 			baseConfigurationReference = A3A2901B9F5C5417F9D47D88 /* Pods-aPollo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = aPollo/aPollo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8LT4277C74;
@@ -739,6 +764,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vanessanader.aPollo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "aPollo/aPollo-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
