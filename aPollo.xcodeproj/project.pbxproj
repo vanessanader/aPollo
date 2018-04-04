@@ -28,7 +28,7 @@
 		B6569D83204DBC23002C6493 /* EvaluationQuestionStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6569D82204DBC23002C6493 /* EvaluationQuestionStruct.swift */; };
 		B6569D85204DBFB7002C6493 /* PollStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6569D84204DBFB7002C6493 /* PollStruct.swift */; };
 		B6569D87204DC872002C6493 /* PollQuestionStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6569D86204DC872002C6493 /* PollQuestionStruct.swift */; };
-		B6569D89204DC9F4002C6493 /* PollAnswerStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6569D88204DC9F4002C6493 /* PollAnswerStruct.swift */; };
+		B6569D89204DC9F4002C6493 /* AnswerStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6569D88204DC9F4002C6493 /* AnswerStruct.swift */; };
 		B668B5AE1FD6ED4C000D11AF /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B668B5AD1FD6ED4C000D11AF /* AttendanceViewController.swift */; };
 		B68E9C2A2031EF6600470B5A /* MSAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B694C2FA2028B5CD002A5E03 /* MSAL.framework */; };
 		B6CADB22206BF28F0027D4C0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CADB21206BF28F0027D4C0 /* WelcomeViewController.swift */; };
@@ -89,7 +89,7 @@
 		B6569D82204DBC23002C6493 /* EvaluationQuestionStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationQuestionStruct.swift; sourceTree = "<group>"; };
 		B6569D84204DBFB7002C6493 /* PollStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollStruct.swift; sourceTree = "<group>"; };
 		B6569D86204DC872002C6493 /* PollQuestionStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollQuestionStruct.swift; sourceTree = "<group>"; };
-		B6569D88204DC9F4002C6493 /* PollAnswerStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollAnswerStruct.swift; sourceTree = "<group>"; };
+		B6569D88204DC9F4002C6493 /* AnswerStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerStruct.swift; sourceTree = "<group>"; };
 		B668B5AD1FD6ED4C000D11AF /* AttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewController.swift; sourceTree = "<group>"; };
 		B694C2FA2028B5CD002A5E03 /* MSAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MSAL.framework; path = Carthage/Build/iOS/MSAL.framework; sourceTree = "<group>"; };
 		B6950D266C66E1C901CE51CE /* Pods_aPolloUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aPolloUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,7 +183,7 @@
 				B6569D86204DC872002C6493 /* PollQuestionStruct.swift */,
 				B6CADB26206BF9B20027D4C0 /* SWRevealViewController.h */,
 				B6CADB27206BF9B20027D4C0 /* SWRevealViewController.m */,
-				B6569D88204DC9F4002C6493 /* PollAnswerStruct.swift */,
+				B6569D88204DC9F4002C6493 /* AnswerStruct.swift */,
 				B604836D1FC46EE700EF8931 /* Main.storyboard */,
 				B6CADB29206C1EC70027D4C0 /* ClassesTableViewCell.swift */,
 				B6CADB21206BF28F0027D4C0 /* WelcomeViewController.swift */,
@@ -551,7 +551,7 @@
 				B6CADB22206BF28F0027D4C0 /* WelcomeViewController.swift in Sources */,
 				B6CADB28206BF9B30027D4C0 /* SWRevealViewController.m in Sources */,
 				B614BC2C206181F6005D591B /* FIRMessagingService.swift in Sources */,
-				B6569D89204DC9F4002C6493 /* PollAnswerStruct.swift in Sources */,
+				B6569D89204DC9F4002C6493 /* AnswerStruct.swift in Sources */,
 				B60483721FC46EE700EF8931 /* aPollo.xcdatamodeld in Sources */,
 				B61D2F74203B258A0036A152 /* StudentStruct.swift in Sources */,
 				B6569D7F204DB6EE002C6493 /* StudentQuestionStruct.swift in Sources */,

@@ -15,7 +15,7 @@ struct PollQuestion {
     
     var possibleAnswers :[String]
     
-    var answersByStudents : [PollAnswer]
+    var answersByStudents : [Answer]
     
     var isMCQ : BooleanLiteralType
     

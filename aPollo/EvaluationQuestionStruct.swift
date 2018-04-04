@@ -10,13 +10,19 @@ import Foundation
 
 struct EvaluationQuestion{
     
-    var evaluationNumber : String
+    var evaluationNumber : String //period number to store under since answers change from a period to another
+    
+    var courseEvaluationId : String
     
     var questionText : String
     
-    var answers : [String]
+    var answersByStudents : [Answer]
+    
+    var possibleAnswers : [String]
+    
+    var isMCQ : BooleanLiteralType
     
     func toAnyObject() -> NSDictionary {
-        return ["EvaluationNumber" : evaluationNumber, "QuestionText" : questionText, "Answers" : answers]
+        return ["EvaluationNumber" : evaluationNumber, "CourseEvaluationId": courseEvaluationId, "QuestionText" : questionText, "PossibleAnswers" : possibleAnswers, "AnswersByStudents": answersByStudents, "IsMCQ" : isMCQ]
     }
 }

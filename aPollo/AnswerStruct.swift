@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PollAnswer {
+struct Answer {
     var studentEmail : String
     
     var answer : String

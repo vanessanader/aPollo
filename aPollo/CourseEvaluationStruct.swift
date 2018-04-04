@@ -13,10 +13,10 @@ struct CourseEvaluation {
     
     var questions : [EvaluationQuestion]
     
-    var participants : [String]
+    var classId : String
     
     func toAnyObject() -> NSDictionary {
-        return ["Id": id, "Questions" : questions, "Participants" : participants]
+        return ["Id": id, "Questions" : questions, "ClassId" : classId]
     }
     
 }
