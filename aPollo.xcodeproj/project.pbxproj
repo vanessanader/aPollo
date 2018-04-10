@@ -21,6 +21,9 @@
 		B614BC2D206181F6005D591B /* UNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614BC2B206181F6005D591B /* UNService.swift */; };
 		B614BC2F20618502005D591B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B614BC2E20618502005D591B /* GoogleService-Info.plist */; };
 		B61D2F74203B258A0036A152 /* StudentStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61D2F73203B258A0036A152 /* StudentStruct.swift */; };
+		B62A410B207CFB5800EEABA9 /* ClassDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A410A207CFB5800EEABA9 /* ClassDetailsViewController.swift */; };
+		B62A410D207D126600EEABA9 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A410C207D126600EEABA9 /* HelpViewController.swift */; };
+		B62A4111207D1B0400EEABA9 /* StudentQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A4110207D1B0400EEABA9 /* StudentQuestionViewController.swift */; };
 		B6569D7B204DA3CC002C6493 /* ClassStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6569D7A204DA3CC002C6493 /* ClassStruct.swift */; };
 		B6569D7D204DA506002C6493 /* ProfessorStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6569D7C204DA506002C6493 /* ProfessorStruct.swift */; };
 		B6569D7F204DB6EE002C6493 /* StudentQuestionStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6569D7E204DB6EE002C6493 /* StudentQuestionStruct.swift */; };
@@ -82,6 +85,9 @@
 		B614BC2E20618502005D591B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B614BC3020618641005D591B /* aPollo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = aPollo.entitlements; sourceTree = "<group>"; };
 		B61D2F73203B258A0036A152 /* StudentStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentStruct.swift; sourceTree = "<group>"; };
+		B62A410A207CFB5800EEABA9 /* ClassDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailsViewController.swift; sourceTree = "<group>"; };
+		B62A410C207D126600EEABA9 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		B62A4110207D1B0400EEABA9 /* StudentQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentQuestionViewController.swift; sourceTree = "<group>"; };
 		B6569D7A204DA3CC002C6493 /* ClassStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassStruct.swift; sourceTree = "<group>"; };
 		B6569D7C204DA506002C6493 /* ProfessorStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorStruct.swift; sourceTree = "<group>"; };
 		B6569D7E204DB6EE002C6493 /* StudentQuestionStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentQuestionStruct.swift; sourceTree = "<group>"; };
@@ -169,6 +175,8 @@
 		B60483681FC46EE700EF8931 /* aPollo */ = {
 			isa = PBXGroup;
 			children = (
+				B62A4110207D1B0400EEABA9 /* StudentQuestionViewController.swift */,
+				B62A410C207D126600EEABA9 /* HelpViewController.swift */,
 				B614BC3020618641005D591B /* aPollo.entitlements */,
 				B614BC2E20618502005D591B /* GoogleService-Info.plist */,
 				B6CADB23206BF2B30027D4C0 /* MenuTableViewController.swift */,
@@ -187,6 +195,7 @@
 				B604836D1FC46EE700EF8931 /* Main.storyboard */,
 				B6CADB29206C1EC70027D4C0 /* ClassesTableViewCell.swift */,
 				B6CADB21206BF28F0027D4C0 /* WelcomeViewController.swift */,
+				B62A410A207CFB5800EEABA9 /* ClassDetailsViewController.swift */,
 				B604836B1FC46EE700EF8931 /* ViewController.swift */,
 				B6569D82204DBC23002C6493 /* EvaluationQuestionStruct.swift */,
 				B668B5AD1FD6ED4C000D11AF /* AttendanceViewController.swift */,
@@ -393,13 +402,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-aPolloUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2CEF903B0390C64A3B9F809C /* [CP] Copy Pods Resources */ = {
@@ -453,13 +465,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-aPolloTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8C35536E8CC65D2936F8896F /* [CP] Copy Pods Resources */ = {
@@ -498,13 +513,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-aPollo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B694C2FC2028B5E2002A5E03 /* ShellScript */ = {
@@ -527,9 +545,26 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-aPollo/Pods-aPollo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CCMPopup/CCMPopup.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/p2.OAuth2/p2_OAuth2.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCMPopup.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/p2_OAuth2.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -550,7 +585,10 @@
 				B6569D81204DB93B002C6493 /* CourseEvaluationStruct.swift in Sources */,
 				B6CADB22206BF28F0027D4C0 /* WelcomeViewController.swift in Sources */,
 				B6CADB28206BF9B30027D4C0 /* SWRevealViewController.m in Sources */,
+				B62A410D207D126600EEABA9 /* HelpViewController.swift in Sources */,
 				B614BC2C206181F6005D591B /* FIRMessagingService.swift in Sources */,
+				B62A410B207CFB5800EEABA9 /* ClassDetailsViewController.swift in Sources */,
+				B62A4111207D1B0400EEABA9 /* StudentQuestionViewController.swift in Sources */,
 				B6569D89204DC9F4002C6493 /* AnswerStruct.swift in Sources */,
 				B60483721FC46EE700EF8931 /* aPollo.xcdatamodeld in Sources */,
 				B61D2F74203B258A0036A152 /* StudentStruct.swift in Sources */,

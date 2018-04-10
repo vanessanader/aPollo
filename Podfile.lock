@@ -1,4 +1,5 @@
 PODS:
+  - CCMPopup (1.1.0)
   - Firebase/Auth (4.8.0):
     - Firebase/Core
     - FirebaseAuth (= 4.4.1)
@@ -65,6 +66,7 @@ PODS:
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
+  - CCMPopup
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -74,6 +76,7 @@ DEPENDENCIES:
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  CCMPopup: e41fad5b8a0823c9cddea8eab6d431670c9dabe5
   Firebase: 710decbbc6d9d48530e9a5dba3209740c3532e05
   FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
   FirebaseAuth: dc0dd403beca5b2b016aac89c2d0b8dad1c81926
@@ -90,6 +93,6 @@ SPEC CHECKSUMS:
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: b83078738f02ee20dc161fcc8525a4ed3c44386e
+PODFILE CHECKSUM: d13947126f8fa5002f2b03547b4b6758bfb05abd
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.4.0

@@ -92,6 +92,31 @@ class WelcomeViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
+    
+    var tempClass = Class(id : "", courseName: "", courseNumber: "", location: "", sectionNumber: "", professorEmail: "", evaluationNumber : 0, evaluationIsStopped: false, evaluationId: "", studentsEnrolled: [], classPolls: [], questionsAsked: [])
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+
+            if (myClassesList.count != 0){
+                tempClass = myClassesList[indexPath.row]
+                
+                performSegue(withIdentifier: "toClass", sender: self)
+            }
+            
+        
+        return indexPath
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if (segue.identifier == "toClass") {
+            let guest = segue.destination as! ClassDetailsViewController
+            guest.tempClass = tempClass
+            
+            
+        }
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         table.tableFooterView = UIView(frame: CGRect.zero)
@@ -100,7 +125,7 @@ class WelcomeViewController: UIViewController, UITableViewDelegate, UITableViewD
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    overrid prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
