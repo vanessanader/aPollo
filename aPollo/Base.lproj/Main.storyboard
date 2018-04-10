@@ -268,6 +268,41 @@
             </objects>
             <point key="canvasLocation" x="2845.5999999999999" y="874.81259370314854"/>
         </scene>
+        <!--Attendances View Controller-->
+        <scene sceneID="Zvq-B1-5pg">
+            <objects>
+                <viewController id="aLO-5s-ffv" customClass="AttendancesViewController" customModule="aPollo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mki-9s-vcs">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Absences" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLg-bn-JuK">
+                                <rect key="frame" x="16" y="51" width="268" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTO-US-QV9">
+                                <rect key="frame" x="16" y="114" width="268" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90471347040000005" green="0.90471347040000005" blue="0.90471347040000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Nb-Uo-pbl"/>
+                    </view>
+                    <size key="freeformSize" width="300" height="200"/>
+                    <connections>
+                        <outlet property="attendanceCount" destination="pTO-US-QV9" id="2vw-jZ-tMa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jLD-Gw-V82" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4648" y="-7.1964017991004505"/>
+        </scene>
         <!--Class Details View Controller-->
         <scene sceneID="6BA-Ga-bCW">
             <objects>
@@ -286,8 +321,11 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Classes" id="R9n-iQ-QwH">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" image="hamburger-icon" id="3XE-ui-YXU">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="3XE-ui-YXU">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <segue destination="8i1-aB-US1" kind="show" id="doS-t2-pSs"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -336,8 +374,8 @@
                                         <rect key="frame" x="18" y="22" width="86" height="86"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weekly Review" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="os9-lp-1Pi">
-                                        <rect key="frame" x="8" y="116" width="106" height="47"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Periodic Review" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="os9-lp-1Pi">
+                                        <rect key="frame" x="-2" y="116" width="124" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -372,6 +410,13 @@
                                     <action selector="questionButtonTapped:" destination="O5n-An-JPv" eventType="touchUpInside" id="s2X-OX-UdW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbZ-1E-E3x">
+                                <rect key="frame" x="212" y="138" width="122" height="163"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="attendancesButtonTapped:" destination="O5n-An-JPv" eventType="touchUpInside" id="DBC-t6-IMi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="QW8-0x-Rv6"/>
@@ -379,12 +424,12 @@
                     <connections>
                         <outlet property="askQuestionView" destination="Wl3-hJ-PsZ" id="Xmw-mI-taa"/>
                         <outlet property="attendanceView" destination="UAt-RX-lqn" id="uAk-X8-EG4"/>
-                        <outlet property="menuButton" destination="3XE-ui-YXU" id="2gW-IG-1fu"/>
                         <outlet property="navBar" destination="T5W-DI-JI4" id="gtz-bv-EBq"/>
                         <outlet property="navBarTitle" destination="R9n-iQ-QwH" id="AKh-Q8-Bbi"/>
                         <outlet property="pollsView" destination="bGJ-tU-WWK" id="SSJ-X7-pcO"/>
                         <outlet property="weeklyReviewView" destination="rcs-FL-RYN" id="kEo-m9-pxj"/>
                         <segue destination="bgQ-Qe-RSK" kind="custom" identifier="toQuestion" customClass="CCMPopupSegue" id="bP2-dV-Vxs"/>
+                        <segue destination="aLO-5s-ffv" kind="show" identifier="toAttendances" customClass="CCMPopupSegue" id="njN-ii-iwX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p7p-AN-6Wd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -604,6 +649,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="d9A-8H-VIe"/>
-        <segue reference="8Js-Sg-gH4"/>
+        <segue reference="VoW-Mh-vGb"/>
     </inferredMetricsTieBreakers>
 </document>

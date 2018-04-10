@@ -36,7 +36,7 @@ class WelcomeViewController: UIViewController, UITableViewDelegate, UITableViewD
                     print("snap", element)
                     print("snapshot count: \(snapshotValue!.count)")
                     
-                    Database.database().reference().child("Classes").child("\(element.value as! String)").observeSingleEvent(of: .value, with: {
+                    Database.database().reference().child("Classes").child("\(element.key as! String)").observeSingleEvent(of: .value, with: {
                         (snapshot) in
                         let snapshotV = snapshot.value as? NSDictionary
                         print(snapshot.value)

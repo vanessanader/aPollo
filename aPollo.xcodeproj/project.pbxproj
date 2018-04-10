@@ -24,6 +24,8 @@
 		B62A410B207CFB5800EEABA9 /* ClassDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A410A207CFB5800EEABA9 /* ClassDetailsViewController.swift */; };
 		B62A410D207D126600EEABA9 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A410C207D126600EEABA9 /* HelpViewController.swift */; };
 		B62A4111207D1B0400EEABA9 /* StudentQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A4110207D1B0400EEABA9 /* StudentQuestionViewController.swift */; };
+		B62A4115207D327F00EEABA9 /* AttendancesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A4114207D327F00EEABA9 /* AttendancesViewController.swift */; };
+		B62A4117207D354700EEABA9 /* StudentAttendanceStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A4116207D354700EEABA9 /* StudentAttendanceStruct.swift */; };
 		B6569D7B204DA3CC002C6493 /* ClassStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6569D7A204DA3CC002C6493 /* ClassStruct.swift */; };
 		B6569D7D204DA506002C6493 /* ProfessorStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6569D7C204DA506002C6493 /* ProfessorStruct.swift */; };
 		B6569D7F204DB6EE002C6493 /* StudentQuestionStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6569D7E204DB6EE002C6493 /* StudentQuestionStruct.swift */; };
@@ -88,6 +90,8 @@
 		B62A410A207CFB5800EEABA9 /* ClassDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailsViewController.swift; sourceTree = "<group>"; };
 		B62A410C207D126600EEABA9 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		B62A4110207D1B0400EEABA9 /* StudentQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentQuestionViewController.swift; sourceTree = "<group>"; };
+		B62A4114207D327F00EEABA9 /* AttendancesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendancesViewController.swift; sourceTree = "<group>"; };
+		B62A4116207D354700EEABA9 /* StudentAttendanceStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAttendanceStruct.swift; sourceTree = "<group>"; };
 		B6569D7A204DA3CC002C6493 /* ClassStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassStruct.swift; sourceTree = "<group>"; };
 		B6569D7C204DA506002C6493 /* ProfessorStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorStruct.swift; sourceTree = "<group>"; };
 		B6569D7E204DB6EE002C6493 /* StudentQuestionStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentQuestionStruct.swift; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 		B60483681FC46EE700EF8931 /* aPollo */ = {
 			isa = PBXGroup;
 			children = (
+				B62A4114207D327F00EEABA9 /* AttendancesViewController.swift */,
 				B62A4110207D1B0400EEABA9 /* StudentQuestionViewController.swift */,
 				B62A410C207D126600EEABA9 /* HelpViewController.swift */,
 				B614BC3020618641005D591B /* aPollo.entitlements */,
@@ -193,6 +198,7 @@
 				B6CADB27206BF9B20027D4C0 /* SWRevealViewController.m */,
 				B6569D88204DC9F4002C6493 /* AnswerStruct.swift */,
 				B604836D1FC46EE700EF8931 /* Main.storyboard */,
+				B62A4116207D354700EEABA9 /* StudentAttendanceStruct.swift */,
 				B6CADB29206C1EC70027D4C0 /* ClassesTableViewCell.swift */,
 				B6CADB21206BF28F0027D4C0 /* WelcomeViewController.swift */,
 				B62A410A207CFB5800EEABA9 /* ClassDetailsViewController.swift */,
@@ -589,11 +595,13 @@
 				B614BC2C206181F6005D591B /* FIRMessagingService.swift in Sources */,
 				B62A410B207CFB5800EEABA9 /* ClassDetailsViewController.swift in Sources */,
 				B62A4111207D1B0400EEABA9 /* StudentQuestionViewController.swift in Sources */,
+				B62A4117207D354700EEABA9 /* StudentAttendanceStruct.swift in Sources */,
 				B6569D89204DC9F4002C6493 /* AnswerStruct.swift in Sources */,
 				B60483721FC46EE700EF8931 /* aPollo.xcdatamodeld in Sources */,
 				B61D2F74203B258A0036A152 /* StudentStruct.swift in Sources */,
 				B6569D7F204DB6EE002C6493 /* StudentQuestionStruct.swift in Sources */,
 				B614BC2D206181F6005D591B /* UNService.swift in Sources */,
+				B62A4115207D327F00EEABA9 /* AttendancesViewController.swift in Sources */,
 				B6CADB24206BF2B30027D4C0 /* MenuTableViewController.swift in Sources */,
 				B6569D83204DBC23002C6493 /* EvaluationQuestionStruct.swift in Sources */,
 				B604836A1FC46EE700EF8931 /* AppDelegate.swift in Sources */,

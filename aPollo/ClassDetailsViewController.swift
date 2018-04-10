@@ -26,7 +26,7 @@ extension CALayer {
 
 class ClassDetailsViewController: UIViewController {
     
-    @IBOutlet weak var menuButton: UIBarButtonItem!
+ 
     @IBOutlet weak var navBarTitle: UINavigationItem!
     
     var tempClass = Class(id : "", courseName: "", courseNumber: "", location: "", sectionNumber: "", professorEmail: "", evaluationNumber : 0, evaluationIsStopped: false, evaluationId: "", studentsEnrolled: [], classPolls: [], questionsAsked: [])
@@ -38,14 +38,14 @@ class ClassDetailsViewController: UIViewController {
     @IBOutlet weak var pollsView: UIView!
     @IBOutlet weak var navBar: UINavigationBar!
     
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Class" , tempClass)
         // Do any additional setup after loading the view.
         navBarTitle.title = tempClass.courseNumber + " - Section " + tempClass.sectionNumber
         
-        menuButton.target = self.revealViewController()
-        menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+        
         
 
         pollsView.layer.roundCorners(radius: 10)
@@ -63,6 +63,9 @@ class ClassDetailsViewController: UIViewController {
         performSegue(withIdentifier: "toQuestion", sender: self)
     }
 
+    @IBAction func attendancesButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "toAttendances", sender: self)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -78,6 +81,17 @@ class ClassDetailsViewController: UIViewController {
             popController.tempClass = tempClass
             
             
+        }
+        if (segue.identifier == "toAttendances"){
+            var popupSegue: CCMPopupSegue? = (segue as? CCMPopupSegue)
+            popupSegue?.destinationBounds = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(300), height: CGFloat(200))
+            
+            popupSegue?.dismissableByTouchingBackground = true
+            
+            let popController = popupSegue?.destination as! AttendancesViewController
+            
+            
+            popController.tempClass = tempClass
         }
     }
     
