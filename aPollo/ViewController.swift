@@ -10,6 +10,7 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
     let kGraphURI = "https://graph.microsoft.com/v1.0/me/"
     let kScopes: [String] = ["https://graph.microsoft.com/user.read"]
     
+    var comingFromApp = false
     var accessToken = String()
     var applicationContext = MSALPublicClientApplication.init()
     
@@ -83,6 +84,21 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
     override func viewDidLoad() {
        logInButton.isUserInteractionEnabled = true
         super.viewDidLoad()
+        if comingFromApp {
+            do {
+                
+                // Removes all tokens from the cache for this application for the provided user
+                // first parameter:   The user to remove from the cache
+                
+                try self.applicationContext.remove(self.applicationContext.users().first)
+               
+                comingFromApp = false
+                
+            } catch let error {
+                print("Received error signing user out: \(error)")
+            }
+        }
+        
         Messaging.messaging().subscribe(toTopic: "-L-D_pp26VNrfCiRCvPa")
         Messaging.messaging().subscribe(toTopic: "try")
         do {
