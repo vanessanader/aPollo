@@ -8,6 +8,7 @@
 
 import UIKit
 import CCMPopup
+import Firebase
 
 extension CALayer {
     func addShadow() {
@@ -38,16 +39,14 @@ class ClassDetailsViewController: UIViewController {
     @IBOutlet weak var pollsView: UIView!
     @IBOutlet weak var navBar: UINavigationBar!
     
-  
+      var answerText = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Class" , tempClass)
         // Do any additional setup after loading the view.
         navBarTitle.title = tempClass.courseNumber + " - Section " + tempClass.sectionNumber
-        
-        
-        
-
+     
         pollsView.layer.roundCorners(radius: 10)
         pollsView.layer.addShadow()
         askQuestionView.layer.roundCorners(radius: 10)
@@ -56,6 +55,41 @@ class ClassDetailsViewController: UIViewController {
         weeklyReviewView.layer.addShadow()
         attendanceView.layer.roundCorners(radius: 10)
         attendanceView.layer.addShadow()
+        
+        //check if attendance question is available
+       var ref =  Database.database().reference().child("Classes").child(tempClass.id).child("AttendanceQuestion")
+        ref.observe(.childAdded, with: { (snapshot) -> Void in
+            print(snapshot)
+             let snapshotV = snapshot.value as? NSDictionary
+             print(snapshotV)
+            let isAvailable = snapshotV!["IsAvailable"] as! BooleanLiteralType
+            self.answerText = snapshotV!["AnswerText"] as! String
+            let ref2 = UserDefaults.standard.string(forKey: "email")!.components(separatedBy: "@")
+            Database.database().reference().child("Users").child("Students").child(ref2[0]).child("Classes").child(self.tempClass.id).child("IsPresent").observeSingleEvent(of: .value, with: { (snapshot) in
+                    let isPresent = snapshot.value! as! BooleanLiteralType
+
+                if (!isPresent && isAvailable){
+                    self.performSegue(withIdentifier: "toAttendanceCheck", sender: self)
+                }
+            })
+
+        })
+        ref.observe(.childChanged, with: { (snapshot) -> Void in
+            let snapshotV = snapshot.value as? NSDictionary
+            print(snapshot)
+            let isAvailable = snapshotV!["IsAvailable"] as! BooleanLiteralType
+             self.answerText = snapshotV!["AnswerText"] as! String
+            let ref2 = UserDefaults.standard.string(forKey: "email")!.components(separatedBy: "@")
+            Database.database().reference().child("Users").child("Students").child(ref2[0]).child("Classes").child(self.tempClass.id).child("IsPresent").observeSingleEvent(of: .value, with: { (snapshot) in
+                let isPresent = snapshot.value! as! BooleanLiteralType
+                
+                if (!isPresent && isAvailable){
+                    self.performSegue(withIdentifier: "toAttendanceCheck", sender: self)
+                }
+            })
+            
+        })
+      
         
     }
     
@@ -93,6 +127,21 @@ class ClassDetailsViewController: UIViewController {
             
             popController.tempClass = tempClass
         }
+        
+        if (segue.identifier == "toAttendanceCheck"){
+            var popupSegue: CCMPopupSegue? = (segue as? CCMPopupSegue)
+            popupSegue?.destinationBounds = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(300), height: CGFloat(500))
+            
+            popupSegue?.dismissableByTouchingBackground = true
+            
+            let popController = popupSegue?.destination as! AttendanceQuestionViewController
+            
+            popController.answerText = answerText
+            popController.tempClass = tempClass
+        }
+        
+    
+        
     }
     
     override var prefersStatusBarHidden: Bool {

@@ -433,11 +433,58 @@
                         <outlet property="weeklyReviewView" destination="rcs-FL-RYN" id="kEo-m9-pxj"/>
                         <segue destination="bgQ-Qe-RSK" kind="custom" identifier="toQuestion" customClass="CCMPopupSegue" id="bP2-dV-Vxs"/>
                         <segue destination="aLO-5s-ffv" kind="show" identifier="toAttendances" customClass="CCMPopupSegue" id="njN-ii-iwX"/>
+                        <segue destination="SfR-KP-zwO" kind="show" identifier="toAttendanceCheck" customClass="CCMPopupSegue" id="wuW-Hl-AIe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p7p-AN-6Wd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3908" y="875.71214392803608"/>
+        </scene>
+        <!--Attendance Question View Controller-->
+        <scene sceneID="Edm-wy-o7N">
+            <objects>
+                <viewController id="SfR-KP-zwO" customClass="AttendanceQuestionViewController" customModule="aPollo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wQp-lQ-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="500"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lOb-NE-J0U">
+                                <rect key="frame" x="16" y="215" width="268" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Htz-ay-qT9">
+                                <rect key="frame" x="116" y="294" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkAttendancePressed:" destination="SfR-KP-zwO" eventType="touchUpInside" id="O1s-ct-q2Z"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer the question your professor has provided you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scy-Rw-DAu">
+                                <rect key="frame" x="16" y="111" width="268" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90471347040000005" green="0.90471347040000005" blue="0.90471347040000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="TFL-8s-MVv"/>
+                    </view>
+                    <size key="freeformSize" width="300" height="500"/>
+                    <connections>
+                        <outlet property="answerTextField" destination="lOb-NE-J0U" id="hJZ-Bt-JNt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ccp-zv-SMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5116.8000000000002" y="645.87706146926541"/>
         </scene>
         <!--Student Question View Controller-->
         <scene sceneID="ZYs-XX-TZg">
@@ -651,7 +698,7 @@
         <image name="weekly" width="720" height="720"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="d9A-8H-VIe"/>
+        <segue reference="doS-t2-pSs"/>
         <segue reference="VoW-Mh-vGb"/>
     </inferredMetricsTieBreakers>
 </document>

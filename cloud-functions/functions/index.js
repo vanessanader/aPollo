@@ -10,6 +10,16 @@ exports.pollAvailable = functions.database
           sendNotification(poll)
           });
 
+exports.attendanceAvailable = functions.database
+.ref('Classes/{Id}/AttendanceQuestion/{AId}')
+.onWrite(
+         event => {
+         let q = event.data.val()
+         console.log("Att",q)
+         sendANotification(q)
+         });
+
+
 function sendNotification(poll){
     if (poll != null){
     let classId = poll.ClassId;
@@ -31,6 +41,30 @@ function sendNotification(poll){
            console.log("Error sending notification: ", error);
            });
     }
+    }
+    
+}
+function sendANotification(q){
+    if (q != null){
+        let classId = q.ClassId;
+        let payload = {
+        notification: {
+        title: "Attendance Open",
+        body: "Open aPollo to confirm your attendance to today's class",
+        badge: badgeCount.toString(),
+        sound: 'default'
+            
+        }
+        };
+        if (q.IsAvailable == true){
+            return admin.messaging().sendToTopic(classId, payload)
+            .then(function(response){
+                  console.log("Notification sent ", response);
+                  })
+            .catch(function(error){
+                   console.log("Error sending notification: ", error);
+                   });
+        }
     }
     
 }

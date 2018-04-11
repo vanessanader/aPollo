@@ -52,7 +52,7 @@ class WelcomeViewController: UIViewController, UITableViewDelegate, UITableViewD
                             let sectionNumber = snapshotV!["SectionNumber"] as! String
                             
                         let newclass = Class(id : id, courseName: courseName, courseNumber: courseNumber, location: location, sectionNumber: sectionNumber, professorEmail: professorEmail, evaluationNumber : evaluationNumber, evaluationIsStopped: evaluationStopped, evaluationId: evaluationId, studentsEnrolled: [], classPolls: [], questionsAsked: [])
-                        
+                        Messaging.messaging().subscribe(toTopic: newclass.id)
                         self.myClassesList.append(newclass)
                            
                         print("Count",self.myClassesList.count)

@@ -34,7 +34,7 @@ class StudentQuestionViewController: UIViewController, UITextFieldDelegate {
     @IBAction func submitPressed(_ sender: Any) {
         if (questionTyped.text == ""){
             let alert  = UIAlertController(title: "Empty question", message: "Please input a question to send", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
         else {

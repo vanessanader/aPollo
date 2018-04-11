@@ -91,7 +91,7 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
                 // first parameter:   The user to remove from the cache
                 
                 try self.applicationContext.remove(self.applicationContext.users().first)
-               
+                UserDefaults.standard.set(false, forKey: "LoggedIn")
                 comingFromApp = false
                 
             } catch let error {

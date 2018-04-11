@@ -28,8 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
-         Messaging.messaging().subscribe(toTopic: "try")
-         Messaging.messaging().subscribe(toTopic: "-L-D_pp26VNrfCiRCvPa")
+         
         print("dt: \(deviceToken)")
         print("did register for notifications")
         print("FCM TOKEN: \(Messaging.messaging().fcmToken)")
