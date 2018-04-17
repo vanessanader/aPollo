@@ -9,15 +9,24 @@
 import Foundation
 
 struct Poll {
+    
+    var id : String
+    
     var pollTitle : String
     
     var pollQuestions : [PollQuestion]
     
     var classId : String
     
-    var isAvailable : BooleanLiteralType
+    var isAvailable : BooleanLiteralType //available for the students to see
+    
+    var isActive : BooleanLiteralType //available for the students to answer
+    
+    var isAnswered : BooleanLiteralType //to check if students already answered this poll or not to make it old poll
+    
+    var pollDate : Int
     
     func toAnyObject() -> NSDictionary {
-        return ["PollTitle": pollTitle, "ClassId": classId, "PollQuestions" : pollQuestions, "IsAvailable": isAvailable]
+        return ["Id": id, "PollTitle": pollTitle, "ClassId": classId, "PollQuestions" : pollQuestions, "IsAvailable": isAvailable, "PollDate": pollDate, "IsActive": isActive]
     }
 }

@@ -101,6 +101,11 @@ class ClassDetailsViewController: UIViewController {
         performSegue(withIdentifier: "toAttendances", sender: self)
     }
     
+    @IBAction func pollButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "toPolls", sender: self)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if (segue.identifier == "toQuestion") {
@@ -138,6 +143,11 @@ class ClassDetailsViewController: UIViewController {
             
             popController.answerText = answerText
             popController.tempClass = tempClass
+        }
+        
+        if (segue.identifier == "toPolls"){
+            let guest = segue.destination as! PollsListViewController
+            guest.tempClass = tempClass
         }
         
     

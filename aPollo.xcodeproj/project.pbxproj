@@ -42,6 +42,11 @@
 		B6CADB24206BF2B30027D4C0 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CADB23206BF2B30027D4C0 /* MenuTableViewController.swift */; };
 		B6CADB28206BF9B30027D4C0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CADB27206BF9B20027D4C0 /* SWRevealViewController.m */; };
 		B6CADB2A206C1EC70027D4C0 /* ClassesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CADB29206C1EC70027D4C0 /* ClassesTableViewCell.swift */; };
+		B6E994432084C61C00B53811 /* PollsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E994422084C61C00B53811 /* PollsListViewController.swift */; };
+		B6E994452084C69000B53811 /* PollsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E994442084C69000B53811 /* PollsListTableViewCell.swift */; };
+		B6E9944720850CE900B53811 /* OldPollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E9944620850CE900B53811 /* OldPollTableViewCell.swift */; };
+		B6E9944920850D1400B53811 /* OldPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E9944820850D1400B53811 /* OldPollViewController.swift */; };
+		B6E9944B20850D3D00B53811 /* NewPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E9944A20850D3D00B53811 /* NewPollViewController.swift */; };
 		EE66E01FCECCFFF62C3AA5B6 /* Pods_aPollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E13AEB1E8D787FF49DEDF9 /* Pods_aPollo.framework */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +118,11 @@
 		B6CADB26206BF9B20027D4C0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		B6CADB27206BF9B20027D4C0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		B6CADB29206C1EC70027D4C0 /* ClassesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesTableViewCell.swift; sourceTree = "<group>"; };
+		B6E994422084C61C00B53811 /* PollsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollsListViewController.swift; sourceTree = "<group>"; };
+		B6E994442084C69000B53811 /* PollsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollsListTableViewCell.swift; sourceTree = "<group>"; };
+		B6E9944620850CE900B53811 /* OldPollTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldPollTableViewCell.swift; sourceTree = "<group>"; };
+		B6E9944820850D1400B53811 /* OldPollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldPollViewController.swift; sourceTree = "<group>"; };
+		B6E9944A20850D3D00B53811 /* NewPollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPollViewController.swift; sourceTree = "<group>"; };
 		F522A4FC5CB64ECF2C8F102A /* Pods-aPolloUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aPolloUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-aPolloUITests/Pods-aPolloUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,11 +212,16 @@
 				B6CADB27206BF9B20027D4C0 /* SWRevealViewController.m */,
 				B6569D88204DC9F4002C6493 /* AnswerStruct.swift */,
 				B604836D1FC46EE700EF8931 /* Main.storyboard */,
+				B6E9944620850CE900B53811 /* OldPollTableViewCell.swift */,
+				B6E9944820850D1400B53811 /* OldPollViewController.swift */,
+				B6E9944A20850D3D00B53811 /* NewPollViewController.swift */,
+				B6E994422084C61C00B53811 /* PollsListViewController.swift */,
 				B62A4118207E639200EEABA9 /* AttendanceQuestionStruct.swift */,
 				B62A411A207E64AE00EEABA9 /* AttendanceQuestionViewController.swift */,
 				B62A4116207D354700EEABA9 /* StudentAttendanceStruct.swift */,
 				B6CADB29206C1EC70027D4C0 /* ClassesTableViewCell.swift */,
 				B6CADB21206BF28F0027D4C0 /* WelcomeViewController.swift */,
+				B6E994442084C69000B53811 /* PollsListTableViewCell.swift */,
 				B62A410A207CFB5800EEABA9 /* ClassDetailsViewController.swift */,
 				B604836B1FC46EE700EF8931 /* ViewController.swift */,
 				B6569D82204DBC23002C6493 /* EvaluationQuestionStruct.swift */,
@@ -605,10 +620,15 @@
 				B62A4117207D354700EEABA9 /* StudentAttendanceStruct.swift in Sources */,
 				B62A411B207E64AE00EEABA9 /* AttendanceQuestionViewController.swift in Sources */,
 				B6569D89204DC9F4002C6493 /* AnswerStruct.swift in Sources */,
+				B6E994432084C61C00B53811 /* PollsListViewController.swift in Sources */,
+				B6E9944B20850D3D00B53811 /* NewPollViewController.swift in Sources */,
 				B60483721FC46EE700EF8931 /* aPollo.xcdatamodeld in Sources */,
 				B61D2F74203B258A0036A152 /* StudentStruct.swift in Sources */,
+				B6E9944720850CE900B53811 /* OldPollTableViewCell.swift in Sources */,
 				B6569D7F204DB6EE002C6493 /* StudentQuestionStruct.swift in Sources */,
 				B614BC2D206181F6005D591B /* UNService.swift in Sources */,
+				B6E9944920850D1400B53811 /* OldPollViewController.swift in Sources */,
+				B6E994452084C69000B53811 /* PollsListTableViewCell.swift in Sources */,
 				B62A4115207D327F00EEABA9 /* AttendancesViewController.swift in Sources */,
 				B6CADB24206BF2B30027D4C0 /* MenuTableViewController.swift in Sources */,
 				B6569D83204DBC23002C6493 /* EvaluationQuestionStruct.swift in Sources */,

@@ -12,18 +12,24 @@ import Firebase
 class WelcomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    
     var myClassesList : [Class] = []
     {
         didSet{
             table.reloadData()
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         menuButton.target = self.revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+        
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
         var ref = UserDefaults.standard.string(forKey: "email")!.components(separatedBy: "@")
+        
         Database.database().reference().child("Users").child("Students").child(ref[0]).observeSingleEvent(of: .value, with: { (snapshot) in
             
             if snapshot.hasChild("Classes"){ //add lists
