@@ -9,23 +9,6 @@
 import UIKit
 import Firebase
 
-extension UIResponder {
-    
-    func next<T: UIResponder>(_ type: T.Type) -> T? {
-        return next as? T ?? next?.next(type)
-    }
-}
-
-extension UITableViewCell {
-    
-    var tableView: UITableView? {
-        return next(UITableView.self)
-    }
-    
-    var indexPath: IndexPath? {
-        return tableView?.indexPath(for: self)
-    }
-}
 
 class NewPollViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -149,17 +132,17 @@ class NewPollViewController: UIViewController, UITableViewDataSource, UITableVie
         if myPollQuestions[indexPath.row].isMCQ{
              if myPollQuestions[indexPath.row].possibleAnswers.count == 2
             {
-                return 367
+                return 310
             }
             if myPollQuestions[indexPath.row].possibleAnswers.count == 3
             {
-                return 440
+                return 385
             }
             
-            return 532
+            return 463
             
         }
-        return 367
+        return 293
     }
 
     @IBOutlet weak var navigationBar: UINavigationItem!

@@ -15,6 +15,9 @@ class OldPollTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    @IBOutlet weak var yourAnswerText: UILabel!
+    @IBOutlet weak var correctAnswerText: UILabel!
+    @IBOutlet weak var questionText: UITextView!
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

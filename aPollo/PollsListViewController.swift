@@ -159,6 +159,11 @@ class PollsListViewController: UIViewController, UITableViewDelegate, UITableVie
             guest.pollId = pollId
             guest.pollTitle = pollTitle
         }
+        if (segue.identifier == "toSelectedOldPoll") {
+            let guest = segue.destination as! OldPollViewController
+            guest.pollId = pollId
+            guest.pollTitle = pollTitle
+        }
     }
 
     /*
