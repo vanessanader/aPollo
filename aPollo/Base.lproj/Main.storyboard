@@ -359,7 +359,7 @@
                                         <rect key="frame" x="18" y="22" width="86" height="86"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Attendances" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EkA-Mh-pzl">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Attendance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EkA-Mh-pzl">
                                         <rect key="frame" x="8" y="130" width="106" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
@@ -395,7 +395,7 @@
                                         <rect key="frame" x="18" y="22" width="86" height="86"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ask a Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sai-LG-3Sj">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student Questions" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sai-LG-3Sj">
                                         <rect key="frame" x="8" y="116" width="106" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
@@ -438,10 +438,10 @@
                         <outlet property="navBarTitle" destination="R9n-iQ-QwH" id="AKh-Q8-Bbi"/>
                         <outlet property="pollsView" destination="bGJ-tU-WWK" id="SSJ-X7-pcO"/>
                         <outlet property="weeklyReviewView" destination="rcs-FL-RYN" id="kEo-m9-pxj"/>
-                        <segue destination="bgQ-Qe-RSK" kind="custom" identifier="toQuestion" customClass="CCMPopupSegue" id="bP2-dV-Vxs"/>
                         <segue destination="aLO-5s-ffv" kind="show" identifier="toAttendances" customClass="CCMPopupSegue" id="njN-ii-iwX"/>
                         <segue destination="SfR-KP-zwO" kind="show" identifier="toAttendanceCheck" customClass="CCMPopupSegue" id="wuW-Hl-AIe"/>
                         <segue destination="6Od-te-a75" kind="show" identifier="toPolls" action="showDetailViewController:sender:" id="8hb-Dk-HMO"/>
+                        <segue destination="dEj-pY-QYo" kind="show" identifier="toStudentQuestions" id="pnL-oD-H8X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p7p-AN-6Wd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -494,6 +494,83 @@
             </objects>
             <point key="canvasLocation" x="5116.8000000000002" y="645.87706146926541"/>
         </scene>
+        <!--Student Questions View Controller-->
+        <scene sceneID="VAj-au-6nn">
+            <objects>
+                <viewController id="dEj-pY-QYo" customClass="StudentQuestionsViewController" customModule="aPollo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WQ1-XL-CCV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tzb-L7-lrx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.0093463659290000008" green="0.47327053549999998" blue="0.9769772887" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Students Questions" id="BRX-ms-xNG">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="T5L-iE-TIj">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="back:" destination="dEj-pY-QYo" id="d8F-MD-Uot"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E0K-Qs-Deq">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StudentQuestionCell" rowHeight="69" id="iOX-qd-w1Y" customClass="StudentQTableViewCell" customModule="aPollo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="69"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iOX-qd-w1Y" id="Wvb-1u-D0r">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="68.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKk-7E-cX3">
+                                                    <rect key="frame" x="24" y="28" width="279" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="forwardButton" translatesAutoresizingMaskIntoConstraints="NO" id="QzH-Lc-KJx">
+                                                    <rect key="frame" x="340" y="29" width="20" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="topic" destination="qKk-7E-cX3" id="zdA-bT-izf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="dEj-pY-QYo" id="qhz-9O-Js5"/>
+                                    <outlet property="delegate" destination="dEj-pY-QYo" id="CGF-Dp-Dd0"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="phn-rk-nX6"/>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="E0K-Qs-Deq" id="Eb6-Ob-4YB"/>
+                        <segue destination="bgQ-Qe-RSK" kind="custom" identifier="toQuestion" customClass="CCMPopupSegue" id="gOP-fC-WYN"/>
+                        <segue destination="wa8-Du-uhj" kind="show" identifier="toAnswered" id="gtY-mY-18o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="897-j6-0hj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3813.5999999999999" y="1741.9790104947529"/>
+        </scene>
         <!--Student Question View Controller-->
         <scene sceneID="ZYs-XX-TZg">
             <objects>
@@ -538,7 +615,99 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7b-F7-qOL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4649.6000000000004" y="1145.1274362818592"/>
+            <point key="canvasLocation" x="4685" y="1454"/>
+        </scene>
+        <!--Answered Questions View Controller-->
+        <scene sceneID="chF-6m-NXd">
+            <objects>
+                <viewController id="wa8-Du-uhj" customClass="AnsweredQuestionsViewController" customModule="aPollo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vtM-X1-ULc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mSa-qT-Cok">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.0093463659290000008" green="0.47327053549999998" blue="0.9769772887" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Answered Questions" id="k6b-36-xsI">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Dtn-Yd-VZM">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="back:" destination="wa8-Du-uhj" id="z1M-hr-hYC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fhA-wZ-6bW">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Q&amp;A" rowHeight="236" id="UQc-Lm-bB6" customClass="AnsweredQuestionsTableViewCell" customModule="aPollo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="236"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UQc-Lm-bB6" id="Gkj-FM-HUT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="235.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Q:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5u-ja-eTU">
+                                                    <rect key="frame" x="15" y="22" width="45" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOL-aj-YET">
+                                                    <rect key="frame" x="15" y="125" width="45" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="answer" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="rFH-SH-rAb">
+                                                    <rect key="frame" x="53" y="117" width="307" height="95"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="question" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="JwL-sm-WEg">
+                                                    <rect key="frame" x="53" y="13" width="307" height="95"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="answerText" destination="rFH-SH-rAb" id="1IM-Ov-vPw"/>
+                                            <outlet property="questionText" destination="JwL-sm-WEg" id="7QO-eU-3fW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wa8-Du-uhj" id="2jM-Lz-4hB"/>
+                                    <outlet property="delegate" destination="wa8-Du-uhj" id="fg9-XA-qlP"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="jO6-4K-fJF"/>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="fhA-wZ-6bW" id="C4D-4h-Arn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S1G-tx-418" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4884" y="2286.2068965517242"/>
         </scene>
         <!--Polls List View Controller-->
         <scene sceneID="v3Z-34-EHp">

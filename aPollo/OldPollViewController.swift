@@ -126,6 +126,7 @@ class OldPollViewController: UIViewController, UITableViewDelegate, UITableViewD
      func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 212
     }
+    
     @IBAction func backPressed(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
     }

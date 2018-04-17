@@ -94,7 +94,7 @@ class ClassDetailsViewController: UIViewController {
     }
     
     @IBAction func questionButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "toQuestion", sender: self)
+        performSegue(withIdentifier: "toStudentQuestions", sender: self)
     }
 
     @IBAction func attendancesButtonTapped(_ sender: Any) {
@@ -108,19 +108,7 @@ class ClassDetailsViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if (segue.identifier == "toQuestion") {
-            var popupSegue: CCMPopupSegue? = (segue as? CCMPopupSegue)
-            popupSegue?.destinationBounds = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(300), height: CGFloat(200))
-            
-            popupSegue?.dismissableByTouchingBackground = true
-            
-            let popController = popupSegue?.destination as! StudentQuestionViewController
-            
-         
-            popController.tempClass = tempClass
-            
-            
-        }
+        
         if (segue.identifier == "toAttendances"){
             var popupSegue: CCMPopupSegue? = (segue as? CCMPopupSegue)
             popupSegue?.destinationBounds = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(300), height: CGFloat(200))
@@ -147,6 +135,10 @@ class ClassDetailsViewController: UIViewController {
         
         if (segue.identifier == "toPolls"){
             let guest = segue.destination as! PollsListViewController
+            guest.tempClass = tempClass
+        }
+        if (segue.identifier == "toStudentQuestions"){
+            let guest = segue.destination as! StudentQuestionsViewController
             guest.tempClass = tempClass
         }
         

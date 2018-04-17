@@ -49,6 +49,10 @@
 		B6E9944B20850D3D00B53811 /* NewPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E9944A20850D3D00B53811 /* NewPollViewController.swift */; };
 		B6E9944D208629A200B53811 /* MCQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E9944C208629A200B53811 /* MCQTableViewCell.swift */; };
 		B6E9944F208629BB00B53811 /* OpenEndedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E9944E208629BB00B53811 /* OpenEndedTableViewCell.swift */; };
+		B6F6ADC92086793800AFB96D /* StudentQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6ADC82086793800AFB96D /* StudentQuestionsViewController.swift */; };
+		B6F6ADCB20867B8A00AFB96D /* StudentQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6ADCA20867B8A00AFB96D /* StudentQTableViewCell.swift */; };
+		B6F6ADCD20867F6400AFB96D /* AnsweredQuestionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6ADCC20867F6400AFB96D /* AnsweredQuestionsTableViewCell.swift */; };
+		B6F6ADCF20867F7E00AFB96D /* AnsweredQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6ADCE20867F7E00AFB96D /* AnsweredQuestionsViewController.swift */; };
 		EE66E01FCECCFFF62C3AA5B6 /* Pods_aPollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E13AEB1E8D787FF49DEDF9 /* Pods_aPollo.framework */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +131,10 @@
 		B6E9944A20850D3D00B53811 /* NewPollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPollViewController.swift; sourceTree = "<group>"; };
 		B6E9944C208629A200B53811 /* MCQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCQTableViewCell.swift; sourceTree = "<group>"; };
 		B6E9944E208629BB00B53811 /* OpenEndedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenEndedTableViewCell.swift; sourceTree = "<group>"; };
+		B6F6ADC82086793800AFB96D /* StudentQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentQuestionsViewController.swift; sourceTree = "<group>"; };
+		B6F6ADCA20867B8A00AFB96D /* StudentQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentQTableViewCell.swift; sourceTree = "<group>"; };
+		B6F6ADCC20867F6400AFB96D /* AnsweredQuestionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnsweredQuestionsTableViewCell.swift; sourceTree = "<group>"; };
+		B6F6ADCE20867F7E00AFB96D /* AnsweredQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnsweredQuestionsViewController.swift; sourceTree = "<group>"; };
 		F522A4FC5CB64ECF2C8F102A /* Pods-aPolloUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aPolloUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-aPolloUITests/Pods-aPolloUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -216,6 +224,10 @@
 				B6CADB27206BF9B20027D4C0 /* SWRevealViewController.m */,
 				B6569D88204DC9F4002C6493 /* AnswerStruct.swift */,
 				B604836D1FC46EE700EF8931 /* Main.storyboard */,
+				B6F6ADCC20867F6400AFB96D /* AnsweredQuestionsTableViewCell.swift */,
+				B6F6ADCE20867F7E00AFB96D /* AnsweredQuestionsViewController.swift */,
+				B6F6ADCA20867B8A00AFB96D /* StudentQTableViewCell.swift */,
+				B6F6ADC82086793800AFB96D /* StudentQuestionsViewController.swift */,
 				B6E9944C208629A200B53811 /* MCQTableViewCell.swift */,
 				B6E9944E208629BB00B53811 /* OpenEndedTableViewCell.swift */,
 				B6E9944620850CE900B53811 /* OldPollTableViewCell.swift */,
@@ -625,20 +637,24 @@
 				B62A410B207CFB5800EEABA9 /* ClassDetailsViewController.swift in Sources */,
 				B62A4111207D1B0400EEABA9 /* StudentQuestionViewController.swift in Sources */,
 				B62A4117207D354700EEABA9 /* StudentAttendanceStruct.swift in Sources */,
+				B6F6ADC92086793800AFB96D /* StudentQuestionsViewController.swift in Sources */,
 				B62A411B207E64AE00EEABA9 /* AttendanceQuestionViewController.swift in Sources */,
 				B6569D89204DC9F4002C6493 /* AnswerStruct.swift in Sources */,
 				B6E994432084C61C00B53811 /* PollsListViewController.swift in Sources */,
 				B6E9944B20850D3D00B53811 /* NewPollViewController.swift in Sources */,
 				B60483721FC46EE700EF8931 /* aPollo.xcdatamodeld in Sources */,
 				B61D2F74203B258A0036A152 /* StudentStruct.swift in Sources */,
+				B6F6ADCB20867B8A00AFB96D /* StudentQTableViewCell.swift in Sources */,
 				B6E9944720850CE900B53811 /* OldPollTableViewCell.swift in Sources */,
 				B6569D7F204DB6EE002C6493 /* StudentQuestionStruct.swift in Sources */,
 				B6E9944D208629A200B53811 /* MCQTableViewCell.swift in Sources */,
 				B614BC2D206181F6005D591B /* UNService.swift in Sources */,
 				B6E9944920850D1400B53811 /* OldPollViewController.swift in Sources */,
 				B6E994452084C69000B53811 /* PollsListTableViewCell.swift in Sources */,
+				B6F6ADCF20867F7E00AFB96D /* AnsweredQuestionsViewController.swift in Sources */,
 				B62A4115207D327F00EEABA9 /* AttendancesViewController.swift in Sources */,
 				B6CADB24206BF2B30027D4C0 /* MenuTableViewController.swift in Sources */,
+				B6F6ADCD20867F6400AFB96D /* AnsweredQuestionsTableViewCell.swift in Sources */,
 				B6569D83204DBC23002C6493 /* EvaluationQuestionStruct.swift in Sources */,
 				B604836A1FC46EE700EF8931 /* AppDelegate.swift in Sources */,
 				B668B5AE1FD6ED4C000D11AF /* AttendanceViewController.swift in Sources */,
