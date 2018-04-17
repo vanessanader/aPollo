@@ -327,7 +327,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="3XE-ui-YXU">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="8i1-aB-US1" kind="show" id="doS-t2-pSs"/>
+                                                <action selector="backPressed:" destination="O5n-An-JPv" id="5VK-vH-nEq"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1298,7 +1298,7 @@
         <image name="weekly" width="720" height="720"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="doS-t2-pSs"/>
+        <segue reference="byu-bg-PyF"/>
         <segue reference="8Js-Sg-gH4"/>
     </inferredMetricsTieBreakers>
 </document>

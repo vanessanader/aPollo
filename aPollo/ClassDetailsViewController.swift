@@ -27,7 +27,14 @@ extension CALayer {
 
 class ClassDetailsViewController: UIViewController {
     
- 
+    @IBAction func backPressed(_ sender: Any) {
+        if let nav = self.navigationController {
+            nav.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     @IBOutlet weak var navBarTitle: UINavigationItem!
     
     var tempClass = Class(id : "", courseName: "", courseNumber: "", location: "", sectionNumber: "", professorEmail: "", evaluationNumber : 0, evaluationIsStopped: false, evaluationId: "", studentsEnrolled: [], classPolls: [], questionsAsked: [])

@@ -19,7 +19,11 @@ class AnsweredQuestionsViewController: UIViewController, UITableViewDataSource, 
     }
     
     @IBAction func back(_ sender: Any) {
-      self.dismiss(animated: true, completion: nil)
+        if let nav = self.navigationController {
+            nav.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBOutlet weak var table: UITableView!
