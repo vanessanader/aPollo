@@ -76,7 +76,11 @@ class PollsListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
 
     @IBAction func backPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        if let nav = self.navigationController {
+            nav.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     override func didReceiveMemoryWarning() {

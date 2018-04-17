@@ -440,8 +440,8 @@
                         <outlet property="weeklyReviewView" destination="rcs-FL-RYN" id="kEo-m9-pxj"/>
                         <segue destination="aLO-5s-ffv" kind="show" identifier="toAttendances" customClass="CCMPopupSegue" id="njN-ii-iwX"/>
                         <segue destination="SfR-KP-zwO" kind="show" identifier="toAttendanceCheck" customClass="CCMPopupSegue" id="wuW-Hl-AIe"/>
-                        <segue destination="6Od-te-a75" kind="show" identifier="toPolls" action="showDetailViewController:sender:" id="8hb-Dk-HMO"/>
                         <segue destination="dEj-pY-QYo" kind="show" identifier="toStudentQuestions" id="pnL-oD-H8X"/>
+                        <segue destination="6Od-te-a75" kind="show" identifier="toPolls" id="cFi-7K-xVu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p7p-AN-6Wd" userLabel="First Responder" sceneMemberID="firstResponder"/>

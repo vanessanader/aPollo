@@ -128,7 +128,11 @@ class OldPollViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @IBAction func backPressed(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
+        if let nav = self.navigationController {
+            nav.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     /*
