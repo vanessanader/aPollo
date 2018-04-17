@@ -87,6 +87,7 @@ class PollsListViewController: UIViewController, UITableViewDelegate, UITableVie
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myPollsList.count
     }
@@ -125,11 +126,13 @@ class PollsListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     var pollId = ""
+    var pollTitle = ""
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         
         if (myPollsList.count != 0){
             pollId = myPollsList[indexPath.row].id
+            pollTitle = myPollsList[indexPath.row].pollTitle
             if (myPollsList[indexPath.row].isActive && isPresent){
             performSegue(withIdentifier: "toSelectedActivePoll", sender: self)
             }
@@ -154,6 +157,7 @@ class PollsListViewController: UIViewController, UITableViewDelegate, UITableVie
         if (segue.identifier == "toSelectedActivePoll") {
             let guest = segue.destination as! NewPollViewController
             guest.pollId = pollId
+            guest.pollTitle = pollTitle
         }
     }
 

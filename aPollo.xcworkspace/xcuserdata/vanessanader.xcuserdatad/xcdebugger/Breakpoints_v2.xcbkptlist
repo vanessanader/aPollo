@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "aPollo/PollsListViewController.swift"
-            timestampString = "545604825.411018"
+            timestampString = "545672531.587787"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -26,11 +26,11 @@
                   moduleName = "aPollo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/vanessanader/aPollo/aPollo/PollsListViewController.swift"
-                  timestampString = "545581672.5100549"
+                  timestampString = "545667974.596732"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
                   offsetFromSymbolStart = "106">
                </Location>
                <Location
@@ -41,14 +41,30 @@
                   moduleName = "aPollo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/vanessanader/aPollo/aPollo/PollsListViewController.swift"
-                  timestampString = "545581672.513126"
+                  timestampString = "545667974.60044"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
                   offsetFromSymbolStart = "40">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "aPollo/PollsListViewController.swift"
+            timestampString = "545672531.591688"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

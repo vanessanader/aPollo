@@ -47,6 +47,8 @@
 		B6E9944720850CE900B53811 /* OldPollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E9944620850CE900B53811 /* OldPollTableViewCell.swift */; };
 		B6E9944920850D1400B53811 /* OldPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E9944820850D1400B53811 /* OldPollViewController.swift */; };
 		B6E9944B20850D3D00B53811 /* NewPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E9944A20850D3D00B53811 /* NewPollViewController.swift */; };
+		B6E9944D208629A200B53811 /* MCQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E9944C208629A200B53811 /* MCQTableViewCell.swift */; };
+		B6E9944F208629BB00B53811 /* OpenEndedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E9944E208629BB00B53811 /* OpenEndedTableViewCell.swift */; };
 		EE66E01FCECCFFF62C3AA5B6 /* Pods_aPollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E13AEB1E8D787FF49DEDF9 /* Pods_aPollo.framework */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +125,8 @@
 		B6E9944620850CE900B53811 /* OldPollTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldPollTableViewCell.swift; sourceTree = "<group>"; };
 		B6E9944820850D1400B53811 /* OldPollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldPollViewController.swift; sourceTree = "<group>"; };
 		B6E9944A20850D3D00B53811 /* NewPollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPollViewController.swift; sourceTree = "<group>"; };
+		B6E9944C208629A200B53811 /* MCQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCQTableViewCell.swift; sourceTree = "<group>"; };
+		B6E9944E208629BB00B53811 /* OpenEndedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenEndedTableViewCell.swift; sourceTree = "<group>"; };
 		F522A4FC5CB64ECF2C8F102A /* Pods-aPolloUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aPolloUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-aPolloUITests/Pods-aPolloUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,6 +216,8 @@
 				B6CADB27206BF9B20027D4C0 /* SWRevealViewController.m */,
 				B6569D88204DC9F4002C6493 /* AnswerStruct.swift */,
 				B604836D1FC46EE700EF8931 /* Main.storyboard */,
+				B6E9944C208629A200B53811 /* MCQTableViewCell.swift */,
+				B6E9944E208629BB00B53811 /* OpenEndedTableViewCell.swift */,
 				B6E9944620850CE900B53811 /* OldPollTableViewCell.swift */,
 				B6E9944820850D1400B53811 /* OldPollViewController.swift */,
 				B6E9944A20850D3D00B53811 /* NewPollViewController.swift */,
@@ -612,6 +618,7 @@
 				B6569D81204DB93B002C6493 /* CourseEvaluationStruct.swift in Sources */,
 				B6CADB22206BF28F0027D4C0 /* WelcomeViewController.swift in Sources */,
 				B6CADB28206BF9B30027D4C0 /* SWRevealViewController.m in Sources */,
+				B6E9944F208629BB00B53811 /* OpenEndedTableViewCell.swift in Sources */,
 				B62A410D207D126600EEABA9 /* HelpViewController.swift in Sources */,
 				B614BC2C206181F6005D591B /* FIRMessagingService.swift in Sources */,
 				B62A4119207E639200EEABA9 /* AttendanceQuestionStruct.swift in Sources */,
@@ -626,6 +633,7 @@
 				B61D2F74203B258A0036A152 /* StudentStruct.swift in Sources */,
 				B6E9944720850CE900B53811 /* OldPollTableViewCell.swift in Sources */,
 				B6569D7F204DB6EE002C6493 /* StudentQuestionStruct.swift in Sources */,
+				B6E9944D208629A200B53811 /* MCQTableViewCell.swift in Sources */,
 				B614BC2D206181F6005D591B /* UNService.swift in Sources */,
 				B6E9944920850D1400B53811 /* OldPollViewController.swift in Sources */,
 				B6E994452084C69000B53811 /* PollsListTableViewCell.swift in Sources */,
