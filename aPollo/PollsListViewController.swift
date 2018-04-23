@@ -118,6 +118,9 @@ class PollsListViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
+        if let cell = tableView.cellForRow(at: indexPath){
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+        }
         
     }
     
@@ -140,7 +143,7 @@ class PollsListViewController: UIViewController, UITableViewDelegate, UITableVie
             if (myPollsList[indexPath.row].isActive && isPresent){
             performSegue(withIdentifier: "toSelectedActivePoll", sender: self)
             }
-             if (!myPollsList[indexPath.row].isActive && myPollsList[indexPath.row].isAnswered){
+            else if (!myPollsList[indexPath.row].isActive && myPollsList[indexPath.row].isAnswered){
                 performSegue(withIdentifier: "toSelectedOldPoll", sender: self)
             }
              else {

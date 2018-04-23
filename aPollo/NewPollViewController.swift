@@ -49,6 +49,7 @@ class NewPollViewController: UIViewController, UITableViewDataSource, UITableVie
                     if (isMCQ){
                         let dict = snapshotV!["PossibleAnswers"] as! NSDictionary
                     answers = Array(dict.allValues) as! [String]
+                        answers = answers.sorted { $0 < $1 }
                         
                        
                         
@@ -88,6 +89,9 @@ class NewPollViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if let cell = tableView.cellForRow(at: indexPath){
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+        }
     }
     
     

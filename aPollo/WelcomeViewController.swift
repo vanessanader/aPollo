@@ -96,6 +96,9 @@ class WelcomeViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
+        if let cell = tableView.cellForRow(at: indexPath){
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+        }
         
     }
     
@@ -105,7 +108,7 @@ class WelcomeViewController: UIViewController, UITableViewDelegate, UITableViewD
 
             if (myClassesList.count != 0){
                 tempClass = myClassesList[indexPath.row]
-                
+               
                 performSegue(withIdentifier: "toClass", sender: self)
             }
             

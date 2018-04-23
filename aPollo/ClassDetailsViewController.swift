@@ -112,6 +112,9 @@ class ClassDetailsViewController: UIViewController {
         performSegue(withIdentifier: "toPolls", sender: self)
     }
     
+    @IBAction func reviewButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "toReview", sender: self)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -147,6 +150,14 @@ class ClassDetailsViewController: UIViewController {
         if (segue.identifier == "toStudentQuestions"){
             let guest = segue.destination as! StudentQuestionsViewController
             guest.tempClass = tempClass
+        }
+        if (segue.identifier == "toReview"){
+            if (!tempClass.evaluationIsStopped){
+            let guest = segue.destination as! PeriodicReviewViewController
+            
+            guest.evaluationNumber = tempClass.evaluationNumber
+            guest.evaluationId = tempClass.evaluationId
+            }
         }
         
     

@@ -53,6 +53,10 @@
 		B6F6ADCB20867B8A00AFB96D /* StudentQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6ADCA20867B8A00AFB96D /* StudentQTableViewCell.swift */; };
 		B6F6ADCD20867F6400AFB96D /* AnsweredQuestionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6ADCC20867F6400AFB96D /* AnsweredQuestionsTableViewCell.swift */; };
 		B6F6ADCF20867F7E00AFB96D /* AnsweredQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6ADCE20867F7E00AFB96D /* AnsweredQuestionsViewController.swift */; };
+		B6F6ADD1208E387C00AFB96D /* PeriodicReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6ADD0208E387C00AFB96D /* PeriodicReviewViewController.swift */; };
+		B6F6ADD9208E3F5700AFB96D /* RatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6ADD8208E3F5700AFB96D /* RatingTableViewCell.swift */; };
+		B6F6ADDB208E3F6600AFB96D /* MCQEvaluationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6ADDA208E3F6600AFB96D /* MCQEvaluationTableViewCell.swift */; };
+		B6F6ADDD208E3F7900AFB96D /* OpenEndedEvaluationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6ADDC208E3F7900AFB96D /* OpenEndedEvaluationTableViewCell.swift */; };
 		EE66E01FCECCFFF62C3AA5B6 /* Pods_aPollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E13AEB1E8D787FF49DEDF9 /* Pods_aPollo.framework */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +139,10 @@
 		B6F6ADCA20867B8A00AFB96D /* StudentQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentQTableViewCell.swift; sourceTree = "<group>"; };
 		B6F6ADCC20867F6400AFB96D /* AnsweredQuestionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnsweredQuestionsTableViewCell.swift; sourceTree = "<group>"; };
 		B6F6ADCE20867F7E00AFB96D /* AnsweredQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnsweredQuestionsViewController.swift; sourceTree = "<group>"; };
+		B6F6ADD0208E387C00AFB96D /* PeriodicReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicReviewViewController.swift; sourceTree = "<group>"; };
+		B6F6ADD8208E3F5700AFB96D /* RatingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTableViewCell.swift; sourceTree = "<group>"; };
+		B6F6ADDA208E3F6600AFB96D /* MCQEvaluationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCQEvaluationTableViewCell.swift; sourceTree = "<group>"; };
+		B6F6ADDC208E3F7900AFB96D /* OpenEndedEvaluationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenEndedEvaluationTableViewCell.swift; sourceTree = "<group>"; };
 		F522A4FC5CB64ECF2C8F102A /* Pods-aPolloUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aPolloUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-aPolloUITests/Pods-aPolloUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -205,6 +213,9 @@
 		B60483681FC46EE700EF8931 /* aPollo */ = {
 			isa = PBXGroup;
 			children = (
+				B6F6ADD8208E3F5700AFB96D /* RatingTableViewCell.swift */,
+				B6F6ADDA208E3F6600AFB96D /* MCQEvaluationTableViewCell.swift */,
+				B6F6ADDC208E3F7900AFB96D /* OpenEndedEvaluationTableViewCell.swift */,
 				B62A4114207D327F00EEABA9 /* AttendancesViewController.swift */,
 				B62A4110207D1B0400EEABA9 /* StudentQuestionViewController.swift */,
 				B62A410C207D126600EEABA9 /* HelpViewController.swift */,
@@ -224,6 +235,7 @@
 				B6CADB27206BF9B20027D4C0 /* SWRevealViewController.m */,
 				B6569D88204DC9F4002C6493 /* AnswerStruct.swift */,
 				B604836D1FC46EE700EF8931 /* Main.storyboard */,
+				B6F6ADD0208E387C00AFB96D /* PeriodicReviewViewController.swift */,
 				B6F6ADCC20867F6400AFB96D /* AnsweredQuestionsTableViewCell.swift */,
 				B6F6ADCE20867F7E00AFB96D /* AnsweredQuestionsViewController.swift */,
 				B6F6ADCA20867B8A00AFB96D /* StudentQTableViewCell.swift */,
@@ -374,6 +386,9 @@
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 0;
 							};
 							com.apple.Push = {
 								enabled = 1;
@@ -592,6 +607,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-aPollo/Pods-aPollo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CCMPopup/CCMPopup.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
@@ -603,6 +619,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCMPopup.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
@@ -634,6 +651,7 @@
 				B62A410D207D126600EEABA9 /* HelpViewController.swift in Sources */,
 				B614BC2C206181F6005D591B /* FIRMessagingService.swift in Sources */,
 				B62A4119207E639200EEABA9 /* AttendanceQuestionStruct.swift in Sources */,
+				B6F6ADD9208E3F5700AFB96D /* RatingTableViewCell.swift in Sources */,
 				B62A410B207CFB5800EEABA9 /* ClassDetailsViewController.swift in Sources */,
 				B62A4111207D1B0400EEABA9 /* StudentQuestionViewController.swift in Sources */,
 				B62A4117207D354700EEABA9 /* StudentAttendanceStruct.swift in Sources */,
@@ -644,10 +662,13 @@
 				B6E9944B20850D3D00B53811 /* NewPollViewController.swift in Sources */,
 				B60483721FC46EE700EF8931 /* aPollo.xcdatamodeld in Sources */,
 				B61D2F74203B258A0036A152 /* StudentStruct.swift in Sources */,
+				B6F6ADDB208E3F6600AFB96D /* MCQEvaluationTableViewCell.swift in Sources */,
 				B6F6ADCB20867B8A00AFB96D /* StudentQTableViewCell.swift in Sources */,
+				B6F6ADDD208E3F7900AFB96D /* OpenEndedEvaluationTableViewCell.swift in Sources */,
 				B6E9944720850CE900B53811 /* OldPollTableViewCell.swift in Sources */,
 				B6569D7F204DB6EE002C6493 /* StudentQuestionStruct.swift in Sources */,
 				B6E9944D208629A200B53811 /* MCQTableViewCell.swift in Sources */,
+				B6F6ADD1208E387C00AFB96D /* PeriodicReviewViewController.swift in Sources */,
 				B614BC2D206181F6005D591B /* UNService.swift in Sources */,
 				B6E9944920850D1400B53811 /* OldPollViewController.swift in Sources */,
 				B6E994452084C69000B53811 /* PollsListTableViewCell.swift in Sources */,

@@ -68,6 +68,9 @@ class MenuTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
+        if let cell = tableView.cellForRow(at: indexPath){
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+        }
         
     }
 

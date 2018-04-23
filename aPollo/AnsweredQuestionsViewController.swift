@@ -104,6 +104,9 @@ class AnsweredQuestionsViewController: UIViewController, UITableViewDataSource, 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
+        if let cell = tableView.cellForRow(at: indexPath){
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+        }
         
     }
     

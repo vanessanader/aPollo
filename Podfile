@@ -15,6 +15,7 @@ target 'aPollo' do
     pod 'Firebase/Database'
     pod 'Firebase/Storage'
     pod 'CCMPopup'
+    pod 'Cosmos'
  
 
   target 'aPolloTests' do
