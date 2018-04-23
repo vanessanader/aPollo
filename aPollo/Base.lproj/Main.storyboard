@@ -130,6 +130,9 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="dlv-qX-JoQ" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="XSv-ee-96u"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="52" id="K8b-6O-pEr">
                                         <rect key="frame" x="0.0" y="335" width="375" height="52"/>
@@ -1216,6 +1219,90 @@
             </objects>
             <point key="canvasLocation" x="6496.8000000000002" y="1293.1034482758621"/>
         </scene>
+        <!--About Us View Controller-->
+        <scene sceneID="olF-sa-30z">
+            <objects>
+                <viewController id="dlv-qX-JoQ" customClass="AboutUsViewController" customModule="aPollo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0rC-9b-SZL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sOW-Bm-WSo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.0093463659290000008" green="0.47327053549999998" blue="0.9769772887" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="About Us" id="DzJ-W8-ptR">
+                                        <barButtonItem key="leftBarButtonItem" image="hamburger-icon" id="byQ-Uk-vPI">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <segue destination="CTa-bv-c5t" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="DXm-cp-CIB"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="GhI-oH-20G">
+                                <rect key="frame" x="16" y="44" width="343" height="623"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">
+
+aPollo is an interactive learning system platform for AUB professors and students. Our goal is to enhance the learning experience of both parties. Our platform offers multiple features:
+
+Professors:
+
+- Accurate attendance taking
+
+- Push questions to students in real-time and get back their answers.
+
+Students:
+
+- Answer questions sent by the professor, and review previously answered questions.
+
+- Push questions to the professor in real-time.
+
+- Evaluate the professors' performance or course pace on a periodic basis.
+
+- Confirm attendance to the class and being able to see the number of absences
+
+
+Contact Us
+
+Laura Gemayel
+lfg00@mail.aub.edu
+
+
+Vanessa Nader
+vjn00@mail.aub.edu
+
+
+Danny Zgheib
+dtz02@mail.aub.edu
+
+
+FYP Group
+fyp.lvd@gmail.com</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="2sy-MO-vte"/>
+                    </view>
+                    <connections>
+                        <outlet property="menuButton" destination="byQ-Uk-vPI" id="u0D-O4-ul1"/>
+                        <outlet property="text" destination="GhI-oH-20G" id="agD-ax-vKC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cz6-nd-mzB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1316" y="1743.778110944528"/>
+        </scene>
         <!--Help View Controller-->
         <scene sceneID="haL-hC-IE8">
             <objects>
@@ -1240,6 +1327,34 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="ony-Ya-BLJ">
+                                <rect key="frame" x="16" y="44" width="343" height="623"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">
+
+We have listed some questions you might have about how to use our app whenever you select a class:
+
+I- Attendance
+
+  In order to confirm your presence in class, you have to wait for the professor to open attendance. This means that you can't access this feature anywhere in the app until your professor allows you to. A screen will popup prompting you to answer the questio your professor will provide to you in class. If the answer you entered matches the one your professor expects you are marked present for that day and can access the polls pushed in class.
+
+  You can also see your number of attendances whenever you click on the "Attendance" section of your corresponding class.
+
+II - Polls
+
+  Whenever you click on the Polls section, you can see all the polls of the class along with their dates. If your professor pushes a new poll during class time, you can only access it if you are marked present. You can see in the old polls your answers in comparison with the right answers and a score on each poll.
+
+  III- Periodic Review
+
+  The periodic review is only available if the professor made it available. You can modify your answers after submitting if the evaluation is still available. The reviews are anonymous.
+
+  IV- Student Questions
+
+  In this section you can see questions asked by your peers that the professor has deemed worthy to answer. You can also push a question to the professor whenever you want.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="3D8-qm-BJZ"/>
@@ -1501,7 +1616,7 @@
         <image name="weekly" width="720" height="720"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="byu-bg-PyF"/>
-        <segue reference="8Js-Sg-gH4"/>
+        <segue reference="d9A-8H-VIe"/>
+        <segue reference="DXm-cp-CIB"/>
     </inferredMetricsTieBreakers>
 </document>

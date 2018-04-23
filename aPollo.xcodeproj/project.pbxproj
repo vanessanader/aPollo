@@ -57,6 +57,7 @@
 		B6F6ADD9208E3F5700AFB96D /* RatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6ADD8208E3F5700AFB96D /* RatingTableViewCell.swift */; };
 		B6F6ADDB208E3F6600AFB96D /* MCQEvaluationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6ADDA208E3F6600AFB96D /* MCQEvaluationTableViewCell.swift */; };
 		B6F6ADDD208E3F7900AFB96D /* OpenEndedEvaluationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6ADDC208E3F7900AFB96D /* OpenEndedEvaluationTableViewCell.swift */; };
+		B6F6ADDF208E702400AFB96D /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6ADDE208E702400AFB96D /* AboutUsViewController.swift */; };
 		EE66E01FCECCFFF62C3AA5B6 /* Pods_aPollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E13AEB1E8D787FF49DEDF9 /* Pods_aPollo.framework */; };
 /* End PBXBuildFile section */
 
@@ -143,6 +144,7 @@
 		B6F6ADD8208E3F5700AFB96D /* RatingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTableViewCell.swift; sourceTree = "<group>"; };
 		B6F6ADDA208E3F6600AFB96D /* MCQEvaluationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCQEvaluationTableViewCell.swift; sourceTree = "<group>"; };
 		B6F6ADDC208E3F7900AFB96D /* OpenEndedEvaluationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenEndedEvaluationTableViewCell.swift; sourceTree = "<group>"; };
+		B6F6ADDE208E702400AFB96D /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		F522A4FC5CB64ECF2C8F102A /* Pods-aPolloUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aPolloUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-aPolloUITests/Pods-aPolloUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -213,6 +215,7 @@
 		B60483681FC46EE700EF8931 /* aPollo */ = {
 			isa = PBXGroup;
 			children = (
+				B6F6ADDE208E702400AFB96D /* AboutUsViewController.swift */,
 				B6F6ADD8208E3F5700AFB96D /* RatingTableViewCell.swift */,
 				B6F6ADDA208E3F6600AFB96D /* MCQEvaluationTableViewCell.swift */,
 				B6F6ADDC208E3F7900AFB96D /* OpenEndedEvaluationTableViewCell.swift */,
@@ -644,6 +647,7 @@
 				B604836C1FC46EE700EF8931 /* ViewController.swift in Sources */,
 				B6569D85204DBFB7002C6493 /* PollStruct.swift in Sources */,
 				B6CADB2A206C1EC70027D4C0 /* ClassesTableViewCell.swift in Sources */,
+				B6F6ADDF208E702400AFB96D /* AboutUsViewController.swift in Sources */,
 				B6569D81204DB93B002C6493 /* CourseEvaluationStruct.swift in Sources */,
 				B6CADB22206BF28F0027D4C0 /* WelcomeViewController.swift in Sources */,
 				B6CADB28206BF9B30027D4C0 /* SWRevealViewController.m in Sources */,
