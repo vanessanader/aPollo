@@ -113,7 +113,14 @@ class ClassDetailsViewController: UIViewController {
     }
     
     @IBAction func reviewButtonTapped(_ sender: Any) {
+        if (!tempClass.evaluationIsStopped){
         performSegue(withIdentifier: "toReview", sender: self)
+        }
+        else {
+            let alert  = UIAlertController(title: "Evaluation unavailable", message: "The evaluation is not available", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -152,12 +159,12 @@ class ClassDetailsViewController: UIViewController {
             guest.tempClass = tempClass
         }
         if (segue.identifier == "toReview"){
-            if (!tempClass.evaluationIsStopped){
+            
             let guest = segue.destination as! PeriodicReviewViewController
             
             guest.evaluationNumber = tempClass.evaluationNumber
             guest.evaluationId = tempClass.evaluationId
-            }
+            
         }
         
     

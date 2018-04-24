@@ -20,6 +20,7 @@ exports.attendanceAvailable = functions.database
          });
 
 
+
 function sendNotification(poll){
     if (poll != null){
     let classId = poll.ClassId;
@@ -47,10 +48,11 @@ function sendNotification(poll){
 function sendANotification(q){
     if (q != null){
         let classId = q.ClassId;
+        let classname = q.CourseNumber
         let payload = {
         notification: {
         title: "Attendance Open",
-        body: "Open aPollo to confirm your attendance to today's class",
+        body: "Open aPollo to confirm your attendance for today's class" ,
         badge: badgeCount.toString(),
         sound: 'default'
             
@@ -68,3 +70,5 @@ function sendANotification(q){
     }
     
 }
+
+
