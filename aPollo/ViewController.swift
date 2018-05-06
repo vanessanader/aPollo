@@ -25,6 +25,7 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
         
         do {
             
+             self.logInButton.isUserInteractionEnabled = false
             // We check to see if we have a current logged in user. If we don't, then we need to sign someone in.
             // We throw an interactionRequired so that we trigger the interactive signin.
             
@@ -178,11 +179,12 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
                 
                 print(result.debugDescription)
                 if (!result.debugDescription.contains("mail.aub.edu") && !result.debugDescription.contains("aub.edu.lb")){
-                    let alert = UIAlertController(title: "Incomplete form", message: "Please sign in using a valid AUB email", preferredStyle: UIAlertControllerStyle.alert)
+                    let alert = UIAlertController(title: "Access Denied", message: "Please sign in using a valid AUB email", preferredStyle: UIAlertControllerStyle.alert)
                     
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                     
                     self.present(alert, animated: true, completion: nil)
+                    self.logInButton.isUserInteractionEnabled = true
                     
                     
                     do {
@@ -200,7 +202,7 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
                 
                 else {
                     if (result.debugDescription.contains("aub.edu.lb")){
-                        let alert = UIAlertController(title: "Error", message: "You do not have access to this application. Login through our website if you are a professor.", preferredStyle: .alert)
+                        let alert = UIAlertController(title: "Access Denied", message: "You do not have access to this application. Login through our website if you are a professor.", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {action in
                             do {
                             
@@ -215,6 +217,7 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
                             }
                             }))
                         self.present(alert, animated: true, completion: nil)
+                        self.logInButton.isUserInteractionEnabled = true
 
                     }
                     else{
