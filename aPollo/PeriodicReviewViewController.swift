@@ -10,6 +10,22 @@ import UIKit
 import Firebase
 import Cosmos
 
+extension UIButton
+{
+    func flash() {
+        
+        let flash = CABasicAnimation(keyPath: "opacity")
+        flash.duration = 0.5
+        flash.fromValue = 1
+        flash.toValue = 0.1
+        flash.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        flash.autoreverses = true
+        flash.repeatCount = 1
+        
+        layer.add(flash, forKey: nil)
+    }
+}
+
 class PeriodicReviewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
    
@@ -249,6 +265,7 @@ class PeriodicReviewViewController: UIViewController, UITableViewDelegate, UITab
         let cell: OpenEndedEvaluationTableViewCell = table.cellForRow(at: indexPathArray[sender.tag+1]) as! OpenEndedEvaluationTableViewCell
         if cell.answerText.text != "" {
             Database.database().reference().child("PeriodicQuestions").child(myEvaluationQuestions[sender.tag].id).child(String(self.evaluationNumber)).child("AnswersByStudents").child(ref[0]).setValue(cell.answerText.text!)
+            cell.submit.flash()
         }
         
     }
@@ -259,12 +276,14 @@ class PeriodicReviewViewController: UIViewController, UITableViewDelegate, UITab
         
         let cell: RatingTableViewCell = table.cellForRow(at: indexPathArray[sender.tag+1]) as! RatingTableViewCell
     Database.database().reference().child("PeriodicQuestions").child(myEvaluationQuestions[sender.tag].id).child(String(self.evaluationNumber)).child("AnswersByStudents").child(ref[0]).setValue(String(cell.stars.rating))
+        cell.submit.flash()
         
        
     
         
     }
     
+
 
     /*
     // MARK: - Navigation

@@ -210,6 +210,7 @@ class NewPollViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell: OpenEndedTableViewCell = table.cellForRow(at: indexPathArray[sender.tag+1]) as! OpenEndedTableViewCell
         if cell.answerText.text != "" {
             Database.database().reference().child("PollQuestions").child(myPollQuestions[sender.tag].id).child("AnswersByStudents").child(ref[0]).setValue(cell.answerText.text!)
+                cell.done.flash()
         }
         
     }
