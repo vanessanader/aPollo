@@ -55,6 +55,7 @@ class PeriodicReviewViewController: UIViewController, UITableViewDelegate, UITab
             Database.database().reference().child("PeriodicQuestions").child("\(element.value as! String)").child(String(self.evaluationNumber)).observeSingleEvent(of: .value, with: {
                     (snapshot) in
                     print("snap", snapshot)
+                if snapshot.exists() {
                     var answers = [""]
                     let snapshotV = snapshot.value as? NSDictionary
                     let questionText = snapshotV!["QuestionText"] as! String
@@ -68,6 +69,7 @@ class PeriodicReviewViewController: UIViewController, UITableViewDelegate, UITab
                     let id = snapshotV!["Id"] as! String
                     var newquest = EvaluationQuestion(evaluationNumber: self.evaluationNumber, courseEvaluationId: self.evaluationId, questionText: questionText, answersByStudents: [], possibleAnswers: answers, isMCQ: isMCQ, isRating: isRating, id: id)
                     self.myEvaluationQuestions.append(newquest)
+                }
                     
                     
                     
@@ -98,6 +100,29 @@ class PeriodicReviewViewController: UIViewController, UITableViewDelegate, UITab
         if let cell = tableView.cellForRow(at: indexPath){
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int
+    {
+        
+        var numOfSections: Int = 0
+        if myEvaluationQuestions.count != 0
+        {
+            tableView.separatorStyle = .singleLine
+            numOfSections            = 1
+            tableView.backgroundView = nil
+        }
+        else
+        {
+            let noDataLabel: UILabel     = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+            noDataLabel.text          = "Click on the classes section in the menu to be able to access the reivew"
+            noDataLabel.textColor     = UIColor(red:0.01, green:0.47, blue:0.98, alpha:1.0)
+            noDataLabel.textAlignment = .center
+            tableView.backgroundView  = noDataLabel
+            tableView.separatorStyle  = .none
+            noDataLabel.numberOfLines = 2
+        }
+        return numOfSections
     }
     
     

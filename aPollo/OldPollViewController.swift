@@ -48,13 +48,19 @@ class OldPollViewController: UIViewController, UITableViewDelegate, UITableViewD
                     let snapshotV = snapshot.value as? NSDictionary
                     let questionText = snapshotV!["QuestionText"] as! String
                     let correctAnswer = snapshotV!["CorrectAnswer"] as! String
+                    var myAnswer = ""
+                    if snapshot.hasChild("AnswersByStudents"){
                     let answerDict = snapshotV!["AnswersByStudents"] as? NSDictionary
              
-                    let myAnswer = answerDict![ref[0]] as! String
+                    myAnswer = answerDict![ref[0]] as! String
                     if (myAnswer.lowercased() == correctAnswer.lowercased())
                     {
                         self.correctOrNot.append(true)
                         self.score += 1
+                    }
+                    else {
+                        self.correctOrNot.append(false)
+                    }
                     }
                     else {
                         self.correctOrNot.append(false)
