@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "aPollo/PollsListViewController.swift"
-            timestampString = "546283472.971403"
+            timestampString = "547394589.615635"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "aPollo/PollsListViewController.swift"
-            timestampString = "546283472.972299"
+            timestampString = "547394589.6255929"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>

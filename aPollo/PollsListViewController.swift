@@ -96,6 +96,28 @@ class PollsListViewController: UIViewController, UITableViewDelegate, UITableVie
         return myPollsList.count
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int
+    {
+        
+        var numOfSections: Int = 0
+        if myPollsList.count != 0
+        {
+            tableView.separatorStyle = .singleLine
+            numOfSections            = 1
+            tableView.backgroundView = nil
+        }
+        else
+        {
+            let noDataLabel: UILabel     = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+            noDataLabel.text          = "No polls available"
+            noDataLabel.textColor     = UIColor(red:0.01, green:0.47, blue:0.98, alpha:1.0)
+            noDataLabel.textAlignment = .center
+            tableView.backgroundView  = noDataLabel
+            tableView.separatorStyle  = .none
+        }
+        return numOfSections
+    }
+    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : PollsListTableViewCell = table.dequeueReusableCell(withIdentifier: "myPoll", for : indexPath) as! PollsListTableViewCell
         cell.pollTitle.text = myPollsList[indexPath.row].pollTitle
