@@ -49,7 +49,10 @@ class WelcomeViewController: UIViewController, UITableViewDelegate, UITableViewD
                         
                             let courseName = snapshotV!["CourseName"] as! String
                             let courseNumber = snapshotV!["CourseNumber"] as! String
-                            let evaluationId = snapshotV!["EvaluationId"] as! String
+                        var evaluationId = ""
+                        if snapshot.hasChild("EvaluationId"){
+                            evaluationId = snapshotV!["EvaluationId"] as! String
+                        }
                             let evaluationStopped = snapshotV!["EvaluationIsStopped"] as! BooleanLiteralType
                             let evaluationNumber = snapshotV!["EvaluationNumber"] as! Int
                             let id = snapshotV!["Id"] as! String

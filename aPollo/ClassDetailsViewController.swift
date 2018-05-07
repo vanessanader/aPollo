@@ -113,7 +113,8 @@ class ClassDetailsViewController: UIViewController {
     }
     
     @IBAction func reviewButtonTapped(_ sender: Any) {
-        if (!tempClass.evaluationIsStopped){
+
+        if (!tempClass.evaluationIsStopped && tempClass.evaluationId != ""){
         performSegue(withIdentifier: "toReview", sender: self)
         }
         else {

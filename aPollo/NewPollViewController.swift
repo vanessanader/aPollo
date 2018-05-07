@@ -33,9 +33,10 @@ class NewPollViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         print(pollTitle)
         navigationBar.title = pollTitle
-        Database.database().reference().child("Polls").child(pollId).child("PollQuestions").observeSingleEvent(of: .value, with: { (snapshot) in
+        Database.database().reference().child("Polls").child(pollId).observeSingleEvent(of: .value, with: { (snapshot) in
             
             
+            if snapshot.hasChild("PollQuestions"){
             let snapshotValue = snapshot.value as? NSDictionary
             
             for element in snapshotValue! {
@@ -60,6 +61,7 @@ class NewPollViewController: UIViewController, UITableViewDataSource, UITableVie
                     
                     
                 })
+            }
             }
             
         })
