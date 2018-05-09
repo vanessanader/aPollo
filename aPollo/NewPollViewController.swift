@@ -37,8 +37,8 @@ class NewPollViewController: UIViewController, UITableViewDataSource, UITableVie
             
             
             if snapshot.hasChild("PollQuestions"){
-            let snapshotValue = snapshot.value as? NSDictionary
-            
+            let snapshotValu = snapshot.value as? NSDictionary
+            let snapshotValue = snapshotValu!["PollQuestions"] as? NSDictionary
             for element in snapshotValue! {
                 print("snap", element)
                 Database.database().reference().child("PollQuestions").child("\(element.key as! String)").observeSingleEvent(of: .value, with: {
