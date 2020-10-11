@@ -14,14 +14,10 @@ class AttendanceViewController: UIViewController ,MKMapViewDelegate, CLLocationM
     
     let locationManager = CLLocationManager()
     
-
     override func viewDidLoad() {
-
-
         let latitude: CLLocationDegrees =  33.8484798
         
         let longitude: CLLocationDegrees = 35.4920868
-        
         
         let latDelta: CLLocationDegrees = 0.03
         
@@ -54,7 +50,6 @@ class AttendanceViewController: UIViewController ,MKMapViewDelegate, CLLocationM
         else{
             print("Location service disabled")
         }
-        
     }
 
     @IBOutlet weak var map: MKMapView!
@@ -113,5 +108,4 @@ class AttendanceViewController: UIViewController ,MKMapViewDelegate, CLLocationM
             self.present(alert, animated: true, completion: nil)
         }
     }
-
 }

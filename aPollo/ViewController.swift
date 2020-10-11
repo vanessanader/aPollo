@@ -4,7 +4,7 @@ import Firebase
 
 class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate {
     
-    let kClientID = "cfc975d2-df79-44e6-b9a9-e73f54f9d4f7"
+    let kClientID = "yourClientID"
     let kAuthority = "https://login.microsoftonline.com/common/v2.0"
     
     let kGraphURI = "https://graph.microsoft.com/v1.0/me/"
@@ -21,8 +21,6 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
     // built in Swift libraries to create a connection.
     
     @IBAction func callGraphButton(_ sender: UIButton) {
-    
-        
         do {
             
              self.logInButton.isUserInteractionEnabled = false
@@ -42,12 +40,10 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
                         print("Refreshing token silently")
                         print("Refreshed Access token is \(self.accessToken)")
                         
-                    
                         self.getContentWithToken()
                         
                     } else {
                         print("Could not acquire token silently: \(error ?? "No error information" as! Error)")
-                        
                     }
                 }
             }
@@ -70,13 +66,9 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
                         print("Could not acquire token: \(error ?? "No error information" as! Error)")
                     }
                 }
-                
             }
             
         } catch {
-            
-            // This is the catch all error.
-            
             print("Unable to acquire token. Got error: \(error)")
             
         }
@@ -100,8 +92,7 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
             }
         }
         
-        Messaging.messaging().subscribe(toTopic: "-L-D_pp26VNrfCiRCvPa")
-        Messaging.messaging().subscribe(toTopic: "try")
+        Messaging.messaging().subscribe(toTopic: "yourTopic")
         do {
             // Initialize a MSALPublicClientApplication with a given clientID and authority
             self.applicationContext = try MSALPublicClientApplication.init(clientId: kClientID, authority: kAuthority)
@@ -117,11 +108,6 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        if self.accessToken.isEmpty {
-           
-        }
-
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -133,7 +119,6 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
             
             self.success = true
             self.performSegue(withIdentifier: "toWelcome", sender: self)
-            
         }
         }
     }
@@ -142,10 +127,8 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
         if let ident = identifier {
             if ident == "toWelcome" {
                 if !success {
-                    
                     return false
                 }
-                
             }
         }
         return true
@@ -218,7 +201,6 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
                             }))
                         self.present(alert, animated: true, completion: nil)
                         self.logInButton.isUserInteractionEnabled = true
-
                     }
                     else{
                 let realResult = result as! NSDictionary
@@ -226,7 +208,7 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
                     if name.contains("(Student)"){
                         self.success = true
                         self.logInButton.isUserInteractionEnabled = false
-                        var email = realResult["mail"] as! String
+                        let email = realResult["mail"] as! String
                         var ref = email.components(separatedBy: "@")
                         Database.database().reference().child("Users").observeSingleEvent(of: .value, with: { (snapshot) in
                             
@@ -252,7 +234,7 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
                                     let firstName = realResult["givenName"] as! String
                                     let lastName = realResult["surname"] as! String
                                     
-                                    var fullName = firstName + " "+lastName
+                                    let fullName = firstName + " "+lastName
                                     print("new user")
                                     let newstudent = Student(name: fullName, email: email, classes: [], questionsAsked: [])
                                     
@@ -266,25 +248,12 @@ class ViewController: UIViewController, UITextFieldDelegate, URLSessionDelegate 
                                     UserDefaults.standard.set(ref[0], forKey: "id")
                                     UserDefaults.standard.set(true, forKey: "LoggedIn")
                                     self.performSegue(withIdentifier: "toWelcome", sender: self)
-
-                                    
                                 }
-                                
-                                
                             })
-                            
-                    
-                        
                     }
-                    
                 }
                 }
             }
-                
-            
             }.resume()
     }
-   
-
-
 }

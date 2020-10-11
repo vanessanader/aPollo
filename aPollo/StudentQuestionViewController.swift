@@ -21,9 +21,7 @@ class StudentQuestionViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var questionTyped: UITextField!
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         self.view.endEditing(true)
-        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -38,9 +36,7 @@ class StudentQuestionViewController: UIViewController, UITextFieldDelegate {
             self.present(alert, animated: true, completion: nil)
         }
         else {
-            
-            
-            var ref = Database.database().reference().child("Classes").child(tempClass.id).child("StudentQuestions").childByAutoId()
+            let ref = Database.database().reference().child("Classes").child(tempClass.id).child("StudentQuestions").childByAutoId()
             let newQuestion = StudentQuestion(id: ref.key, courseNumber: tempClass.id, questionText: questionTyped.text!, answerText: "")
             ref.setValue(newQuestion.toAnyObject())
             let alert  = UIAlertController(title: "Success", message: "Your question was sent", preferredStyle: .alert)
@@ -49,23 +45,10 @@ class StudentQuestionViewController: UIViewController, UITextFieldDelegate {
                 self.dismiss(animated: true, completion: nil)
             }))
             self.present(alert, animated: true, completion: nil)
-            
         }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

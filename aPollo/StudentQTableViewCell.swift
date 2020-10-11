@@ -18,8 +18,5 @@ class StudentQTableViewCell: UITableViewCell {
     @IBOutlet weak var topic: UILabel!
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    }    
 }

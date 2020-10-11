@@ -20,6 +20,4 @@ struct Student {
     func toAnyObject() -> NSDictionary {
         return ["Name": name, "Email" : email, "Classes" : classes, "QuestionsAsked": questionsAsked]
     }
-    
-    
 }

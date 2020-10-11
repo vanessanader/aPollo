@@ -24,8 +24,6 @@ class NewPollViewController: UIViewController, UITableViewDataSource, UITableVie
     {
         didSet{
           table.reloadData()
-          
-            
         }
     }
     
@@ -34,7 +32,6 @@ class NewPollViewController: UIViewController, UITableViewDataSource, UITableVie
         print(pollTitle)
         navigationBar.title = pollTitle
         Database.database().reference().child("Polls").child(pollId).observeSingleEvent(of: .value, with: { (snapshot) in
-            
             
             if snapshot.hasChild("PollQuestions"){
             let snapshotValu = snapshot.value as? NSDictionary
@@ -51,24 +48,14 @@ class NewPollViewController: UIViewController, UITableViewDataSource, UITableVie
                         let dict = snapshotV!["PossibleAnswers"] as! NSDictionary
                     answers = Array(dict.allValues) as! [String]
                         answers = answers.sorted { $0 < $1 }
-                        
-                       
-                        
                     }
-                    var newquest = PollQuestion(id: element.key as! String, questionText: questionText, possibleAnswers: answers, answersByStudents: [], isMCQ: isMCQ, correctAnswer: "")
+                    let newquest = PollQuestion(id: element.key as! String, questionText: questionText, possibleAnswers: answers, answersByStudents: [], isMCQ: isMCQ, correctAnswer: "")
                     self.myPollQuestions.append(newquest)
                     print("count", self.myPollQuestions.count)
-                    
-                    
                 })
             }
             }
-            
         })
-        
-        
-
-        // Do any additional setup after loading the view.
     }
 
     @IBOutlet weak var table: UITableView!
@@ -170,7 +157,6 @@ class NewPollViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.answer2.backgroundColor = UIColor.gray
         cell.answer3.backgroundColor = UIColor.gray
         cell.answer4.backgroundColor = UIColor.gray
-        
     }
     
     @IBAction func answer2Pressed(_ sender: UIButton){
@@ -181,7 +167,6 @@ class NewPollViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.answer1.backgroundColor = UIColor.gray
         cell.answer3.backgroundColor = UIColor.gray
         cell.answer4.backgroundColor = UIColor.gray
-        
     }
     
     @IBAction func answer3Pressed(_ sender: UIButton){
@@ -192,7 +177,6 @@ class NewPollViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.answer2.backgroundColor = UIColor.gray
         cell.answer1.backgroundColor = UIColor.gray
         cell.answer4.backgroundColor = UIColor.gray
-        
     }
     
     @IBAction func answer4Pressed(_ sender: UIButton){
@@ -214,18 +198,6 @@ class NewPollViewController: UIViewController, UITableViewDataSource, UITableVie
             Database.database().reference().child("PollQuestions").child(myPollQuestions[sender.tag].id).child("AnswersByStudents").child(ref[0]).setValue(cell.answerText.text!)
                 cell.done.flash()
         }
-        
     }
-    
     @IBOutlet weak var nextButton: UIBarButtonItem!
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -64,7 +64,7 @@ class ClassDetailsViewController: UIViewController {
         attendanceView.layer.addShadow()
         
         //check if attendance question is available
-       var ref =  Database.database().reference().child("Classes").child(tempClass.id).child("AttendanceQuestion")
+       let ref =  Database.database().reference().child("Classes").child(tempClass.id).child("AttendanceQuestion")
         ref.observe(.childAdded, with: { (snapshot) -> Void in
             print(snapshot)
              let snapshotV = snapshot.value as? NSDictionary
@@ -79,7 +79,6 @@ class ClassDetailsViewController: UIViewController {
                     self.performSegue(withIdentifier: "toAttendanceCheck", sender: self)
                 }
             })
-
         })
         ref.observe(.childChanged, with: { (snapshot) -> Void in
             let snapshotV = snapshot.value as? NSDictionary
@@ -94,10 +93,7 @@ class ClassDetailsViewController: UIViewController {
                     self.performSegue(withIdentifier: "toAttendanceCheck", sender: self)
                 }
             })
-            
         })
-      
-        
     }
     
     @IBAction func questionButtonTapped(_ sender: Any) {
@@ -128,19 +124,17 @@ class ClassDetailsViewController: UIViewController {
         
         
         if (segue.identifier == "toAttendances"){
-            var popupSegue: CCMPopupSegue? = (segue as? CCMPopupSegue)
+            let popupSegue: CCMPopupSegue? = (segue as? CCMPopupSegue)
             popupSegue?.destinationBounds = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(300), height: CGFloat(200))
             
             popupSegue?.dismissableByTouchingBackground = true
             
             let popController = popupSegue?.destination as! AttendancesViewController
-            
-            
             popController.tempClass = tempClass
         }
         
         if (segue.identifier == "toAttendanceCheck"){
-            var popupSegue: CCMPopupSegue? = (segue as? CCMPopupSegue)
+            let popupSegue: CCMPopupSegue? = (segue as? CCMPopupSegue)
             popupSegue?.destinationBounds = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(300), height: CGFloat(500))
             
             popupSegue?.dismissableByTouchingBackground = true
@@ -164,12 +158,8 @@ class ClassDetailsViewController: UIViewController {
             let guest = segue.destination as! PeriodicReviewViewController
             
             guest.evaluationNumber = tempClass.evaluationNumber
-            guest.evaluationId = tempClass.evaluationId
-            
+            guest.evaluationId = tempClass.evaluationId  
         }
-        
-    
-        
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -180,16 +170,4 @@ class ClassDetailsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

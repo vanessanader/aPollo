@@ -36,7 +36,4 @@ struct Class {
     func toAnyObject() -> NSDictionary {
         return ["Id": id, "CourseName" : courseName, "CourseNumber" : courseNumber, "Location": location, "SectionNumber":sectionNumber, "ProfessorEmail" : professorEmail, "EvaluationNumber":evaluationNumber, "EvaluationIsStopped":evaluationIsStopped, "EvaluationId": evaluationId, "StudentsEnrolled": studentsEnrolled, "ClassPolls" : classPolls, "QuestionAsked":questionsAsked]
     }
-    
-    
-    
 }

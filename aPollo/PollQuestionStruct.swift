@@ -24,5 +24,4 @@ struct PollQuestion {
     func toAnyObject() -> NSDictionary {
         return ["Id": id, "QuestionText" : questionText, "PossibleAnswers" : possibleAnswers, "AnswersByStudents" : answersByStudents, "IsMCQ" : isMCQ , "CorrectAnswer" : correctAnswer]
     }
-    
 }

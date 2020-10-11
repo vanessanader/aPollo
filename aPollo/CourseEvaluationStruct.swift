@@ -18,5 +18,4 @@ struct CourseEvaluation {
     func toAnyObject() -> NSDictionary {
         return ["Id": id, "Questions" : questions, "ClassId" : classId]
     }
-    
 }

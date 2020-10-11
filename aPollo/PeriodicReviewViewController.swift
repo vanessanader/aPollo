@@ -28,7 +28,6 @@ extension UIButton
 
 class PeriodicReviewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-   
     private var ratingStorage : [Double] = []
     var evaluationNumber = 0
     var evaluationId = ""
@@ -62,7 +61,6 @@ class PeriodicReviewViewController: UIViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
         Database.database().reference().child("PeriodicEvaluations").child(evaluationId).child("Questions").observeSingleEvent(of: .value, with: { (snapshot) in
             
-            
             let snapshotValue = snapshot.value as? NSDictionary
             
             for element in snapshotValue! {
@@ -83,19 +81,12 @@ class PeriodicReviewViewController: UIViewController, UITableViewDelegate, UITab
                         answers = answers.sorted { $0 < $1 }
                     }
                     let id = snapshotV!["Id"] as! String
-                    var newquest = EvaluationQuestion(evaluationNumber: self.evaluationNumber, courseEvaluationId: self.evaluationId, questionText: questionText, answersByStudents: [], possibleAnswers: answers, isMCQ: isMCQ, isRating: isRating, id: id)
+                    let newquest = EvaluationQuestion(evaluationNumber: self.evaluationNumber, courseEvaluationId: self.evaluationId, questionText: questionText, answersByStudents: [], possibleAnswers: answers, isMCQ: isMCQ, isRating: isRating, id: id)
                     self.myEvaluationQuestions.append(newquest)
                 }
-                    
-                    
-                    
                 })
             }
-            
         })
-        
-        
-        
         // Do any additional setup after loading the view.
     }
  
@@ -213,7 +204,6 @@ class PeriodicReviewViewController: UIViewController, UITableViewDelegate, UITab
         return 226
     }
     
-
     
     @IBAction func answer1Pressed(_ sender: UIButton){
         var ref = UserDefaults.standard.string(forKey: "email")!.components(separatedBy: "@")
@@ -277,24 +267,7 @@ class PeriodicReviewViewController: UIViewController, UITableViewDelegate, UITab
         let cell: RatingTableViewCell = table.cellForRow(at: indexPathArray[sender.tag+1]) as! RatingTableViewCell
     Database.database().reference().child("PeriodicQuestions").child(myEvaluationQuestions[sender.tag].id).child(String(self.evaluationNumber)).child("AnswersByStudents").child(ref[0]).setValue(String(cell.stars.rating))
         cell.submit.flash()
-        
-       
-    
-        
     }
-    
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 

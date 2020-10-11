@@ -67,7 +67,7 @@ class OldPollViewController: UIViewController, UITableViewDelegate, UITableViewD
                     }
                     
                     self.myAnswers.append(myAnswer)
-                    var newquest = PollQuestion(id: element.key as! String, questionText: questionText, possibleAnswers: [], answersByStudents: [], isMCQ: false, correctAnswer: correctAnswer)
+                    let newquest = PollQuestion(id: element.key as! String, questionText: questionText, possibleAnswers: [], answersByStudents: [], isMCQ: false, correctAnswer: correctAnswer)
                     self.myPollQuestions.append(newquest)
                     print("count", self.myPollQuestions.count)
                     
@@ -76,13 +76,9 @@ class OldPollViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
             
         })
-        
-        
-        
         // Do any additional setup after loading the view.
     }
 
-    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -97,19 +93,13 @@ class OldPollViewController: UIViewController, UITableViewDelegate, UITableViewD
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : OldPollTableViewCell = table.dequeueReusableCell(withIdentifier: "pollQuestion", for : indexPath) as! OldPollTableViewCell
         
-       
         let q = myPollQuestions[indexPath.row].questionText
         cell.correctAnswerText.text = myPollQuestions[indexPath.row].correctAnswer
        
         let range               = (q as NSString).range(of: q)
         let attributedString    = NSMutableAttributedString(string: q)
         
-        
-//        attributedString.addAttribute(NSAttributedStringKey.underlineStyle, value: NSNumber(value: 1), range: range)
-//        attributedString.addAttribute(NSAttributedStringKey.underlineColor, value: UIColor.black, range: range)
-
         attributedString.addAttribute(NSAttributedStringKey.font, value: UIFont.systemFont(ofSize: 18.0, weight:.semibold), range: range)
-        //textView.attributedText = attributedString
         
         cell.questionText.attributedText = attributedString
         cell.yourAnswerText.text = myAnswers[indexPath.row]
@@ -140,15 +130,4 @@ class OldPollViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.dismiss(animated: true, completion: nil)
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

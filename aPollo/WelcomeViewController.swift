@@ -67,10 +67,7 @@ class WelcomeViewController: UIViewController, UITableViewDelegate, UITableViewD
                         print("Count",self.myClassesList.count)
                     })
                 }
-                
-                
             }
-        // Do any additional setup after loading the view.
     })
     }
 
@@ -89,7 +86,6 @@ class WelcomeViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func numberOfSections(in tableView: UITableView) -> Int
     {
-        
         var numOfSections: Int = 0
         if myClassesList.count != 0
         {
@@ -123,7 +119,6 @@ class WelcomeViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let cell = tableView.cellForRow(at: indexPath){
             cell.selectionStyle = UITableViewCellSelectionStyle.none
         }
-        
     }
     
     var tempClass = Class(id : "", courseName: "", courseNumber: "", location: "", sectionNumber: "", professorEmail: "", evaluationNumber : 0, evaluationIsStopped: false, evaluationId: "", studentsEnrolled: [], classPolls: [], questionsAsked: [])
@@ -135,8 +130,6 @@ class WelcomeViewController: UIViewController, UITableViewDelegate, UITableViewD
                
                 performSegue(withIdentifier: "toClass", sender: self)
             }
-            
-        
         return indexPath
         
     }
@@ -154,14 +147,4 @@ class WelcomeViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         table.tableFooterView = UIView(frame: CGRect.zero)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    overrid prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

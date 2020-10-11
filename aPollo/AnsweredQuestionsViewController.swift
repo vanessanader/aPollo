@@ -39,17 +39,14 @@ class AnsweredQuestionsViewController: UIViewController, UITableViewDataSource, 
                 
                 for element in snapshotValue! {
                     print("snap", element.value)
-                    var q = element.value as? NSDictionary
+                    let q = element.value as? NSDictionary
                     let question = q!["QuestionText"] as! String
                     var answer = ""
                     if (q!["AnswerText"] as! String != ""){
                         answer = q!["AnswerText"] as! String
-                        var newquestion = StudentQuestion(id: "", courseNumber: "", questionText: question, answerText: answer)
+                        let newquestion = StudentQuestion(id: "", courseNumber: "", questionText: question, answerText: answer)
                         self.studentsQuestions.append(newquestion)
                     }
-                 
-                    
-                    
                 }
             }
         
@@ -120,17 +117,4 @@ class AnsweredQuestionsViewController: UIViewController, UITableViewDataSource, 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 236.0
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

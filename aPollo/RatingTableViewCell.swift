@@ -21,7 +21,4 @@ class RatingTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    
-
-
 }

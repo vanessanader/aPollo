@@ -19,7 +19,6 @@
 		B604838D1FC46EE700EF8931 /* aPolloUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B604838C1FC46EE700EF8931 /* aPolloUITests.swift */; };
 		B614BC2C206181F6005D591B /* FIRMessagingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614BC2A206181F6005D591B /* FIRMessagingService.swift */; };
 		B614BC2D206181F6005D591B /* UNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614BC2B206181F6005D591B /* UNService.swift */; };
-		B614BC2F20618502005D591B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B614BC2E20618502005D591B /* GoogleService-Info.plist */; };
 		B61D2F74203B258A0036A152 /* StudentStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61D2F73203B258A0036A152 /* StudentStruct.swift */; };
 		B62A410B207CFB5800EEABA9 /* ClassDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A410A207CFB5800EEABA9 /* ClassDetailsViewController.swift */; };
 		B62A410D207D126600EEABA9 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A410C207D126600EEABA9 /* HelpViewController.swift */; };
@@ -102,7 +101,6 @@
 		B604838E1FC46EE700EF8931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B614BC2A206181F6005D591B /* FIRMessagingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRMessagingService.swift; sourceTree = "<group>"; };
 		B614BC2B206181F6005D591B /* UNService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNService.swift; sourceTree = "<group>"; };
-		B614BC2E20618502005D591B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B614BC3020618641005D591B /* aPollo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = aPollo.entitlements; sourceTree = "<group>"; };
 		B61D2F73203B258A0036A152 /* StudentStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentStruct.swift; sourceTree = "<group>"; };
 		B62A410A207CFB5800EEABA9 /* ClassDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailsViewController.swift; sourceTree = "<group>"; };
@@ -223,7 +221,6 @@
 				B62A4110207D1B0400EEABA9 /* StudentQuestionViewController.swift */,
 				B62A410C207D126600EEABA9 /* HelpViewController.swift */,
 				B614BC3020618641005D591B /* aPollo.entitlements */,
-				B614BC2E20618502005D591B /* GoogleService-Info.plist */,
 				B6CADB23206BF2B30027D4C0 /* MenuTableViewController.swift */,
 				B60483691FC46EE700EF8931 /* AppDelegate.swift */,
 				B6569D7A204DA3CC002C6493 /* ClassStruct.swift */,
@@ -437,7 +434,6 @@
 			files = (
 				B60483771FC46EE700EF8931 /* LaunchScreen.storyboard in Resources */,
 				B60483741FC46EE700EF8931 /* Assets.xcassets in Resources */,
-				B614BC2F20618502005D591B /* GoogleService-Info.plist in Resources */,
 				B604836F1FC46EE700EF8931 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -854,7 +850,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = aPollo/aPollo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8LT4277C74;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -878,7 +874,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = aPollo/aPollo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8LT4277C74;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -900,7 +896,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LEU3K6P4DA;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = aPolloTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vanessanader.aPolloTests;
@@ -918,7 +914,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LEU3K6P4DA;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = aPolloTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vanessanader.aPolloTests;
@@ -935,7 +931,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LEU3K6P4DA;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = aPolloUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vanessanader.aPolloUITests;
@@ -952,7 +948,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LEU3K6P4DA;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = aPolloUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vanessanader.aPolloUITests;
