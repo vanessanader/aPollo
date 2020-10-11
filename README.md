@@ -1,7 +1,6 @@
 # aPollo
 
-![github-small](https://user-images.githubusercontent.com/29184558/95690330-98158a00-0c1f-11eb-845f-d924eff2fb97.png =50x100)
-![github-small](https://user-images.githubusercontent.com/29184558/95690337-a4014c00-0c1f-11eb-9277-e9d3744c5384.png)
+![github-small](https://user-images.githubusercontent.com/29184558/95690489-ea0adf80-0c20-11eb-9e36-e75244f27629.png)
 
 Final year project, American University of Beirut.
 
